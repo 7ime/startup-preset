@@ -3,9 +3,9 @@ import {IChat} from '@entities/chat'
 import {EStatusChat} from '@constants/chat'
 
 export enum EActions {
-    GetList = '[Chat] GetList',
-    GetListSuccess = '[Chat] GetListSuccess',
+    GetUsedList = '[Chat] GetUsedList',
+    GetUsedListSuccess = '[Chat] GetUsedListSuccess',
 }
 
-export const getList = createAction<EStatusChat>(EActions.GetList)
-export const getListSuccess = createAction<IChat.ListItemModel[]>(EActions.GetListSuccess)
+export const getUsedList = createAction<EStatusChat>(EActions.GetUsedList)
+export const getUsedListSuccess = createAction<IChat.ListItemModel[]>(EActions.GetUsedListSuccess)

@@ -5,16 +5,16 @@ import {ChatAction} from '../index'
 
 const service: IService = getService()
 
-export function* getList(action: ReturnType<typeof ChatAction.getList>) {
+export function* getUsedList(action: ReturnType<typeof ChatAction.getUsedList>) {
     try {
         const response = yield call(service.chatService.getList, action.payload)
 
-        yield put(ChatAction.getListSuccess(response))
+        yield put(ChatAction.getUsedListSuccess(response))
     } catch (error) {
         console.error(error)
     }
 }
 
 export function* rootSaga() {
-    yield takeLatest([ChatAction.getList], getList)
+    yield takeLatest([ChatAction.getUsedList], getUsedList)
 }

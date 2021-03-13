@@ -7,6 +7,7 @@ export namespace IChat {
         name: string
         type: ETypeChat
         status: EStatusChat
+        selected: boolean
         avatar: IAvatar | null
         counter: number | null
         notificationsState: EChatNotificationsState

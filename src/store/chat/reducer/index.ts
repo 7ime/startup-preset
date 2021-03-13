@@ -3,7 +3,7 @@ import {createReducer} from '@reduxjs/toolkit'
 
 export const reducer = createReducer(ChatState.initialState, (builder) => {
     builder
-        .addCase(ChatAction.getListSuccess, (state, {payload}) => {
-            state.list = payload
+        .addCase(ChatAction.getUsedListSuccess, (state, {payload}) => {
+            state.usedList = payload
         })
 })
