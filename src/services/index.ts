@@ -5,6 +5,7 @@ import WebNotificationService from '@services/web-notification-service'
 import SwService from '@services/sw-service'
 import PostMessageService from '@services/post-message-service'
 import CacheService from '@services/cache-service'
+import ChatService from '@services/chat-service'
 
 class Service implements IService {
     jsonPlaceholderService = new JsonPlaceholderService()
@@ -13,6 +14,7 @@ class Service implements IService {
     swService = new SwService()
     postMessage = new PostMessageService()
     cacheService = new CacheService()
+    chatService = new ChatService()
 }
 
 const service = new Service()
