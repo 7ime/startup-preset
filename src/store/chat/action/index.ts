@@ -8,4 +8,4 @@ export enum EActions {
 }
 
 export const getList = createAction<EStatusChat>(EActions.GetList)
-export const getListSuccess = createAction<IChat.ListItem[]>(EActions.GetListSuccess)
+export const getListSuccess = createAction<IChat.ListItemModel[]>(EActions.GetListSuccess)

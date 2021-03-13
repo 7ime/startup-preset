@@ -1,9 +1,12 @@
 import {v4 as uuid} from 'uuid'
 import {IChat} from '@entities/chat'
 import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/chat'
+import MockAvatar from './avatar'
+import {getDynamicAvatarColor} from '@helpers/get-dynamic-avatar-color'
+import {getAvatarInitials} from '@helpers/get-avatar-initilas'
 
 export default class MockChat {
-    static list = (status = EStatusChat.used): IChat.ListItem[] => [
+    static list = (status = EStatusChat.used): IChat.ListItemModel[] => [
         {
             id: uuid(),
             name: 'Saved Messages',
@@ -24,7 +27,9 @@ export default class MockChat {
             name: 'Maria Ivanova',
             type: ETypeChat.single,
             counter: 2,
-            avatar: 'https://get.wallhere.com/photo/women-blonde-glasses-women-with-glasses-smiling-ponytail-open-mouth-1228377.jpg',
+            avatar: MockAvatar.empty({
+                img: 'https://get.wallhere.com/photo/women-blonde-glasses-women-with-glasses-smiling-ponytail-open-mouth-1228377.jpg',
+            }),
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
@@ -39,7 +44,9 @@ export default class MockChat {
             name: 'Learn Javascript',
             type: ETypeChat.group,
             counter: 1000,
-            avatar: 'https://im0-tub-by.yandex.net/i?id=74293382d62c074d20f9b603a19f8286&n=13&exp=1',
+            avatar: MockAvatar.empty({
+                img: 'https://im0-tub-by.yandex.net/i?id=74293382d62c074d20f9b603a19f8286&n=13&exp=1',
+            }),
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
@@ -54,7 +61,10 @@ export default class MockChat {
             name: 'Pavel Noname',
             type: ETypeChat.single,
             counter: null,
-            avatar: null,
+            avatar: MockAvatar.empty({
+                color: getDynamicAvatarColor(),
+                initials: getAvatarInitials('Pavel Noname')
+            }),
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
@@ -69,7 +79,10 @@ export default class MockChat {
             name: 'Elena Markova',
             type: ETypeChat.single,
             counter: null,
-            avatar: null,
+            avatar: MockAvatar.empty({
+                color: getDynamicAvatarColor(),
+                initials: getAvatarInitials('Elena Markova')
+            }),
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
