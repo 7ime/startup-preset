@@ -18,7 +18,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.self,
+                senderType: ETypeSender.self,
+                senderName: 'You',
                 shortPreviewMsg: 'Hello world',
                 readingStatus: null
             }
@@ -36,7 +37,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
                 date: '2021-03-09T18:31:42',
-                sender: ETypeSender.user,
+                senderType: ETypeSender.user,
+                senderName: 'Maria Ivanova',
                 shortPreviewMsg: 'How are you?',
                 readingStatus: null
             }
@@ -54,7 +56,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-03-02T09:31:42',
-                sender: ETypeSender.user,
+                senderType: ETypeSender.user,
+                senderName: 'Learn Javascript',
                 shortPreviewMsg: 'Frontend the best',
                 readingStatus: null
             }
@@ -73,7 +76,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.self,
+                senderType: ETypeSender.self,
+                senderName: 'You',
                 shortPreviewMsg: 'Hello man',
                 readingStatus: EMessageReadingStatus.read
             }
@@ -92,7 +96,28 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.self,
+                senderType: ETypeSender.self,
+                senderName: 'You',
+                shortPreviewMsg: 'Hello man',
+                readingStatus: EMessageReadingStatus.unread
+            }
+        },
+        {
+            id: uuid(),
+            name: 'Elena Markova',
+            type: ETypeChat.single,
+            counter: 10000000,
+            avatar: MockAvatar.empty({
+                color: getDynamicAvatarColor(),
+                initials: getAvatarInitials('Elena Markova')
+            }),
+            selected: true,
+            status,
+            notificationsState: EChatNotificationsState.enabled,
+            lastMessage: {
+                date: '2021-02-09T18:31:42',
+                senderType: ETypeSender.user,
+                senderName: 'Elena Markova',
                 shortPreviewMsg: 'Hello man',
                 readingStatus: EMessageReadingStatus.unread
             }
@@ -110,7 +135,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.channel,
+                senderType: ETypeSender.channel,
+                senderName: 'Messenger News',
                 shortPreviewMsg: 'We have done some improvements',
                 readingStatus: null
             }
@@ -119,7 +145,7 @@ export default class MockChat {
             id: uuid(),
             name: '1111111111111111111111111111111111111111111111111111111111111111111111111112222222222222111111111111',
             type: ETypeChat.channel,
-            counter: 1,
+            counter: 99999999999,
             avatar: MockAvatar.empty({
                 img: 'https://images.wallpaperscraft.ru/image/gory_vershina_sneg_113610_7952x5304.jpg'
             }),
@@ -128,7 +154,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.channel,
+                senderType: ETypeSender.channel,
+                senderName: 'Messenger News',
                 shortPreviewMsg: '111111111111111111111111111111111111111111111111111122222222222222222222211111111111111111111111111111111111',
                 readingStatus: null
             }
@@ -147,7 +174,8 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.self,
+                senderType: ETypeSender.self,
+                senderName: 'You',
                 shortPreviewMsg: 'Hello man. 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
                 readingStatus: EMessageReadingStatus.read
             }

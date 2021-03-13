@@ -1,0 +1,23 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.root {
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 0 5px;
+    font-size: 12px;
+
+    &.primary {
+        color: $white;
+        background-color: $primary;
+    }
+
+    &.disabled {
+        background-color: #BBBBBB;
+        color: $white;
+    }
+}

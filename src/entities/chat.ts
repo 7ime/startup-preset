@@ -13,7 +13,8 @@ export namespace IChat {
         notificationsState: EChatNotificationsState
         lastMessage: {
             date: string
-            sender: ETypeSender
+            senderType: ETypeSender
+            senderName: string
             shortPreviewMsg: string
             readingStatus: EMessageReadingStatus | null
         }

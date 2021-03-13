@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import classnames from 'classnames'
 import css from './index.module.scss'
 import {IAvatar} from '@models/avatar'
 import {IParentClass} from '@models/shared'
@@ -8,15 +8,15 @@ interface IProps extends IParentClass {
     data: IAvatar
 }
 
-const ChatAvatar = ({ data }: IProps) => {
+const ChatAvatar = ({ data, parentClass }: IProps) => {
     const {
         img,
         initials,
-        color
+        color,
     } = data
 
     return (
-        <div className={css.root} style={{
+        <div className={classnames(css.root, parentClass)} style={{
             backgroundImage: img ? `url(${img})` : 'none',
             backgroundColor: color ? color : 'none',
         }}>

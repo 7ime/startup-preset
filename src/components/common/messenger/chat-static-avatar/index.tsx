@@ -9,10 +9,10 @@ interface IProps extends IParentClass {
     type: 'saved' | 'archived'
 }
 
-const ChatStaticAvatar = ({ type }: IProps) => {
+const ChatStaticAvatar = ({ type, parentClass }: IProps) => {
 
     return (
-        <div className={classnames(css.root, css[type])}>
+        <div className={classnames(css.root, css[type], parentClass)}>
             <div className={css.icon}>
                 {
                     type === 'saved' && chatIcons.bookmark()
