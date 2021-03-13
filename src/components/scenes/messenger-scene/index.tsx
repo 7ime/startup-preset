@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {Helmet} from 'react-helmet'
+import Messenger from '@components/common/messenger/messenger'
 
 const MessengerScene = () => {
     return (
@@ -7,9 +8,7 @@ const MessengerScene = () => {
             <Helmet>
                 <title>Messenger</title>
             </Helmet>
-            <div className={'container'}>
-
-            </div>
+            <Messenger />
         </React.Fragment>
     )
 }
