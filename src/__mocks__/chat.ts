@@ -49,7 +49,7 @@ export default class MockChat {
             avatar: MockAvatar.empty({
                 img: 'https://im0-tub-by.yandex.net/i?id=74293382d62c074d20f9b603a19f8286&n=13&exp=1',
             }),
-            selected: false,
+            selected: true,
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
@@ -87,7 +87,7 @@ export default class MockChat {
                 color: getDynamicAvatarColor(),
                 initials: getAvatarInitials('Elena Markova')
             }),
-            selected: true,
+            selected: false,
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
@@ -120,7 +120,9 @@ export default class MockChat {
             name: '1111111111111111111111111111111111111111111111111111111111111111111111111112222222222222111111111111',
             type: ETypeChat.channel,
             counter: 1,
-            avatar: null,
+            avatar: MockAvatar.empty({
+                img: 'https://images.wallpaperscraft.ru/image/gory_vershina_sneg_113610_7952x5304.jpg'
+            }),
             status,
             selected: false,
             notificationsState: EChatNotificationsState.disabled,

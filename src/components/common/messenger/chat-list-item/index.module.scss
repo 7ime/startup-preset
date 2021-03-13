@@ -1,14 +1,20 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
 .root {
-    &.channel {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 12px;
+    width: 100%;
 
-    }
-
-    &.group {
-
+    &.is_active {
+        background-color: $primary;
     }
 
     .avatarWrap {
-
+        position: absolute;
+        top: 8px;
+        left: 12px;
     }
 
     .avatar {
@@ -16,27 +22,79 @@
     }
 
     .content {
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 55px;
+        min-height: 45px;
     }
 
     .header {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: 600;
+        padding-right: 80px;
+    }
 
+    &.is_active .header {
+        color: $white;
+    }
+
+    &.channel .header {
+        background-image: url('~@images/chat/loudspeaker.svg');
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        background-size: 12px;
+        padding-left: 20px;
+    }
+
+    &.channel.is_active .header {
+        background-image: url('~@images/chat/loudspeaker-white.svg');
+    }
+
+    &.group .header {
+        background-image: url('~@images/chat/users.svg');
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        background-size: 12px;
+        padding-left: 20px;
+    }
+
+    &.group.is_active .header {
+        background-image: url('~@images/chat/users-white.svg');
     }
 
     .footer {
-
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 5px;
     }
 
     .sender {
+        color: $blue;
+        text-transform: capitalize;
+        margin-right: 4px;
+    }
 
+    &.is_active .sender {
+        color: $white;
     }
 
     .message {
+        color: $grey;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
+    &.is_active .message {
+        color: $white;
     }
 
     .additionalInfo {
-
+        position: absolute;
     }
 
     .date {

@@ -17,13 +17,15 @@ const ChatListItem = ({ data }: IProps) => {
         avatar,
         type,
         name,
-        lastMessage
+        lastMessage,
+        selected
     } = data
 
     const classNames = classnames(
         css.root,
         {[css.channel]: type === ETypeChat.channel},
         {[css.group]: type === ETypeChat.group},
+        {[css.is_active]: selected},
     )
 
     return (
