@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{137:function(e,n,t){"use strict";t.r(n);var l=t(0),a=t(42);n.default=function(){return l.createElement(l.Fragment,null,l.createElement(a.Helmet,null,l.createElement("title",null,"Messenger")),l.createElement("div",{className:"container"}))}}}]);
