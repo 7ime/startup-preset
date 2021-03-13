@@ -1,3 +1,26 @@
-.root {
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
 
+.root {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .initials {
+        display: flex;
+
+        span {
+            color: $white;
+            font-size: 17px;
+            padding: 0 1px;
+            font-weight: 600;
+        }
+    }
 }

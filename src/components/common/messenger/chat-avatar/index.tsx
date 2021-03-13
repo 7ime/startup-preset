@@ -9,10 +9,27 @@ interface IProps extends IParentClass {
 }
 
 const ChatAvatar = ({ data }: IProps) => {
+    const {
+        img,
+        initials,
+        color
+    } = data
 
     return (
-        <div className={css.root}>
-
+        <div className={css.root} style={{
+            backgroundImage: img ? `url(${img})` : 'none',
+            backgroundColor: color ? color : 'none',
+        }}>
+            {
+                initials && (
+                    <div className={css.initials}>
+                        <span>{initials[0]}</span>
+                        {
+                            initials[1] && <span>{initials[1]}</span>
+                        }
+                    </div>
+                )
+            }
         </div>
     )
 }

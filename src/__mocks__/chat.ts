@@ -29,7 +29,7 @@ export default class MockChat {
             type: ETypeChat.single,
             counter: 2,
             avatar: MockAvatar.empty({
-                img: 'https://get.wallhere.com/photo/women-blonde-glasses-women-with-glasses-smiling-ponytail-open-mouth-1228377.jpg',
+                img: 'https://avatars.yandex.net/get-music-content/2806365/8703ec7c.a.11646710-1/m1000x1000?webp=false',
             }),
             selected: false,
             status,
@@ -102,7 +102,9 @@ export default class MockChat {
             name: 'Messenger News',
             type: ETypeChat.channel,
             counter: 1,
-            avatar: null,
+            avatar: MockAvatar.empty({
+                img: 'https://images.wallpaperscraft.ru/image/gory_vershina_sneg_113610_7952x5304.jpg'
+            }),
             status,
             selected: false,
             notificationsState: EChatNotificationsState.disabled,
@@ -127,6 +129,25 @@ export default class MockChat {
                 sender: ETypeSender.channel,
                 shortPreviewMsg: '111111111111111111111111111111111111111111111111111122222222222222222222211111111111111111111111111111111111',
                 readingStatus: null
+            }
+        },
+        {
+            id: uuid(),
+            name: 'Pavel',
+            type: ETypeChat.single,
+            counter: null,
+            avatar: MockAvatar.empty({
+                color: getDynamicAvatarColor(),
+                initials: getAvatarInitials('Pavel')
+            }),
+            selected: false,
+            status,
+            notificationsState: EChatNotificationsState.enabled,
+            lastMessage: {
+                date: '2021-02-09T18:31:42',
+                sender: ETypeSender.self,
+                shortPreviewMsg: 'Hello man. 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
+                readingStatus: EMessageReadingStatus.read
             }
         },
     ]
