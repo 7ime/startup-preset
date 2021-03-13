@@ -1,5 +1,5 @@
 export enum ETypeChat {
-    system = 'system',
+    channel = 'channel',
     single = 'single',
     group = 'group',
     savedMessages = 'savedMessages'
@@ -11,7 +11,7 @@ export enum EStatusChat {
 }
 
 export enum ETypeSender {
-    system = 'system',
+    channel = 'channel',
     user = 'user',
     self = 'self'
 }

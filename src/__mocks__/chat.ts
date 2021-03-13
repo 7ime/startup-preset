@@ -100,7 +100,7 @@ export default class MockChat {
         {
             id: uuid(),
             name: 'Messenger News',
-            type: ETypeChat.system,
+            type: ETypeChat.channel,
             counter: 1,
             avatar: null,
             status,
@@ -108,8 +108,24 @@ export default class MockChat {
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
                 date: '2021-02-09T18:31:42',
-                sender: ETypeSender.system,
+                sender: ETypeSender.channel,
                 shortPreviewMsg: 'We have done some improvements',
+                readingStatus: null
+            }
+        },
+        {
+            id: uuid(),
+            name: '1111111111111111111111111111111111111111111111111111111111111111111111111112222222222222111111111111',
+            type: ETypeChat.channel,
+            counter: 1,
+            avatar: null,
+            status,
+            selected: false,
+            notificationsState: EChatNotificationsState.disabled,
+            lastMessage: {
+                date: '2021-02-09T18:31:42',
+                sender: ETypeSender.channel,
+                shortPreviewMsg: '111111111111111111111111111111111111111111111111111122222222222222222222211111111111111111111111111111111111',
                 readingStatus: null
             }
         },
