@@ -10,6 +10,7 @@ import MessageDate from '@components/common/messenger/message-date'
 import ChatCounter from '@components/common/messenger/chat-counter'
 import {getCounterForView} from '@helpers/get-counter-for-view'
 import {checkShowSenderInChatList} from '@helpers/check-show-sender-in-chat-list'
+import {getDateViewForChatList} from '@helpers/date/get-date-view-for-chat-list'
 
 interface IProps {
     data: IChat.ListItemModel
@@ -60,7 +61,9 @@ const ChatListItem = ({ data }: IProps) => {
                         lastMessage.readingStatus && <ReadingStatus status={lastMessage.readingStatus} parentClass={css.readingStatus} />
                     }
                     {
-                        <MessageDate date={lastMessage.date} parentClass={css.date} />
+                        <MessageDate type={'light'} parentClass={css.date}>
+                            {getDateViewForChatList(lastMessage.date)}
+                        </MessageDate>
                     }
                     {
                         counter && (

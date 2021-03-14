@@ -107,13 +107,18 @@
 
     .additionalInfo {
         position: absolute;
-        top: 0;
+        top: 1px;
         right: 0;
         height: 100%;
+        display: flex;
     }
 
     .date {
 
+    }
+
+    &.is_active .date {
+        color: $white;
     }
 
     .readingStatus {

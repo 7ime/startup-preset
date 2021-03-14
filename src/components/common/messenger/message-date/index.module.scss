@@ -1,3 +1,14 @@
-.root {
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
 
+.root {
+    font-size: 14px;
+
+    &.light {
+        color: $grey;
+    }
+
+    &.secondary {
+        color: $secondary;
+    }
 }

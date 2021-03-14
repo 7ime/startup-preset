@@ -1,4 +1,5 @@
 import {v4 as uuid} from 'uuid'
+import moment from 'moment'
 import {IChat} from '@entities/chat'
 import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/chat'
 import MockAvatar from './avatar'
@@ -17,7 +18,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().toISOString(),
                 senderType: ETypeSender.self,
                 senderName: 'You',
                 shortPreviewMsg: 'Hello world',
@@ -36,7 +37,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
-                date: '2021-03-09T18:31:42',
+                date: moment().subtract(1, 'days').toISOString(),
                 senderType: ETypeSender.user,
                 senderName: 'Maria Ivanova',
                 shortPreviewMsg: 'How are you?',
@@ -55,7 +56,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
-                date: '2021-03-02T09:31:42',
+                date: moment().subtract(2, 'days').toISOString(),
                 senderType: ETypeSender.user,
                 senderName: 'Learn Javascript',
                 shortPreviewMsg: 'Frontend the best',
@@ -75,7 +76,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(3, 'days').toISOString(),
                 senderType: ETypeSender.self,
                 senderName: 'You',
                 shortPreviewMsg: 'Hello man',
@@ -95,7 +96,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(4, 'days').toISOString(),
                 senderType: ETypeSender.self,
                 senderName: 'You',
                 shortPreviewMsg: 'Hello man',
@@ -115,7 +116,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(5, 'days').toISOString(),
                 senderType: ETypeSender.user,
                 senderName: 'Elena Markova',
                 shortPreviewMsg: 'Hello man',
@@ -134,7 +135,7 @@ export default class MockChat {
             selected: false,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(6, 'days').toISOString(),
                 senderType: ETypeSender.channel,
                 senderName: 'Messenger News',
                 shortPreviewMsg: 'We have done some improvements',
@@ -153,7 +154,7 @@ export default class MockChat {
             selected: false,
             notificationsState: EChatNotificationsState.disabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(7, 'days').toISOString(),
                 senderType: ETypeSender.channel,
                 senderName: 'Messenger News',
                 shortPreviewMsg: '111111111111111111111111111111111111111111111111111122222222222222222222211111111111111111111111111111111111',
@@ -173,7 +174,7 @@ export default class MockChat {
             status,
             notificationsState: EChatNotificationsState.enabled,
             lastMessage: {
-                date: '2021-02-09T18:31:42',
+                date: moment().subtract(8, 'days').toISOString(),
                 senderType: ETypeSender.self,
                 senderName: 'You',
                 shortPreviewMsg: 'Hello man. 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
