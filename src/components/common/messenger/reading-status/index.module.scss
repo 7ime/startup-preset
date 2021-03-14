@@ -1,3 +1,30 @@
-.root {
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
 
+.root {
+    width: 20px;
+    height: 15px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+    &.read {
+        &.light {
+            background-image: url('~@images/chat/check-mark-white.svg')
+        }
+
+        &.secondary {
+            background-image: url('~@images/chat/check-mark-green.svg')
+        }
+    }
+
+    &.unread {
+        &.light {
+            background-image: url('~@images/chat/check-marks-white.svg')
+        }
+
+        &.secondary {
+            background-image: url('~@images/chat/check-marks-green.svg')
+        }
+    }
 }

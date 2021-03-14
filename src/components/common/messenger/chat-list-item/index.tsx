@@ -57,14 +57,23 @@ const ChatListItem = ({ data }: IProps) => {
                 </div>
 
                 <div className={css.additionalInfo}>
-                    {
-                        lastMessage.readingStatus && <ReadingStatus status={lastMessage.readingStatus} parentClass={css.readingStatus} />
-                    }
-                    {
-                        <MessageDate type={'light'} parentClass={css.date}>
-                            {getDateViewForChatList(lastMessage.date)}
-                        </MessageDate>
-                    }
+                    <div className={css.additionalTopContent}>
+                        {
+                            lastMessage.readingStatus && (
+                                <ReadingStatus
+                                    status={lastMessage.readingStatus}
+                                    type={selected ? 'light' : 'secondary'}
+                                    parentClass={css.readingStatus}
+                                />
+                            )
+                        }
+                        {
+                            <MessageDate type={'light'} parentClass={css.date}>
+                                {getDateViewForChatList(lastMessage.date)}
+                            </MessageDate>
+                        }
+                    </div>
+
                     {
                         counter && (
                             <ChatCounter
