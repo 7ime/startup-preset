@@ -1,0 +1,9 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.root {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: $zIndexContextMenu;
+}

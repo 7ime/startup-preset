@@ -2,8 +2,8 @@ import * as React from 'react'
 import classnames from 'classnames'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
-import OutsideClick from '@components/utilities/outside-click'
 import {ICursorPosition} from '@models/metrics'
+import ContextMenu from '@components/utilities/context-menu'
 
 interface IProps extends IParentClass {
     onOutsideClick(event: MouseEvent): unknown
@@ -15,6 +15,7 @@ const ChatContextMenu: React.FC<IProps> = (props) => {
         children,
         onOutsideClick,
         parentClass,
+        cursorPosition
     } = props
 
     const classNames = classnames(
@@ -22,16 +23,12 @@ const ChatContextMenu: React.FC<IProps> = (props) => {
         parentClass
     )
 
-    const handleOutsideClick = (event: MouseEvent) => {
-        onOutsideClick(event)
-    }
-
     return (
-        <OutsideClick onOutsideClick={handleOutsideClick}>
+        <ContextMenu onOutsideClick={onOutsideClick} cursorPosition={cursorPosition}>
             <div className={classNames}>
                 {children}
             </div>
-        </OutsideClick>
+        </ContextMenu>
     )
 }
 
