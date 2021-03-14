@@ -70,14 +70,16 @@ const ContextMenu: React.FC<IProps> = (props) => {
     }, [])
 
     return (
-        <OutsideClick onOutsideClick={onOutsideClick}>
-            <div ref={ref} className={classNames} style={{
-                top: cursorPosition.y + 'px',
-                left: cursorPosition.x + 'px',
-            }}>
-                {children}
-            </div>
-        </OutsideClick>
+        <div className={css.wrapper}>
+            <OutsideClick onOutsideClick={onOutsideClick}>
+                <div ref={ref} className={classNames} style={{
+                    top: cursorPosition.y + 'px',
+                    left: cursorPosition.x + 'px',
+                }}>
+                    {children}
+                </div>
+            </OutsideClick>
+        </div>
     )
 }
 
