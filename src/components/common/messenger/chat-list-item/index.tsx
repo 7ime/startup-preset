@@ -11,6 +11,7 @@ import ChatCounter from '@components/common/messenger/chat-counter'
 import {getCounterForView} from '@helpers/get-counter-for-view'
 import {checkShowSenderInChatList} from '@helpers/check-show-sender-in-chat-list'
 import {getDateViewForChatList} from '@helpers/date/get-date-view-for-chat-list'
+import ChatListContextMenu from '@components/common/messenger/chat-list-context-menu'
 
 interface IProps {
     data: IChat.ListItemModel
@@ -18,6 +19,7 @@ interface IProps {
 
 const ChatListItem = ({ data }: IProps) => {
     const {
+        id,
         avatar,
         type,
         name,
@@ -34,8 +36,44 @@ const ChatListItem = ({ data }: IProps) => {
         {[css.is_active]: selected},
     )
 
+    const [contextMenuData, setContextMenuData] = React.useState({
+        open: false,
+        cursorPosition: {
+            x: 0,
+            y: 0
+        }
+    })
+
+    const handleCloseContextMenu = () => {
+        setContextMenuData({
+            open: false,
+            cursorPosition: {
+                x: 0,
+                y: 0,
+            }
+        })
+    }
+
+    const handleContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+        event.preventDefault()
+        event.stopPropagation()
+
+        setContextMenuData({
+            open: true,
+            cursorPosition: {
+                x: event.pageX,
+                y: event.pageY,
+            }
+        })
+
+        return false
+    }
+
     return (
-        <div className={classNames}>
+        <div className={classNames} onContextMenu={handleContextMenu}>
+            {
+                contextMenuData.open && <ChatListContextMenu chatId={id} onClose={handleCloseContextMenu} cursorPosition={contextMenuData.cursorPosition} />
+            }
             <div className={css.inner}>
                 <div className={css.avatarWrap}>
                     {

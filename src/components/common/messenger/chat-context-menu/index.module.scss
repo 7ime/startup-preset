@@ -1,0 +1,12 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.root {
+    position: relative;
+    border-radius: $radius;
+    border: 1px solid $border_light_color;
+    background-color: $white;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
