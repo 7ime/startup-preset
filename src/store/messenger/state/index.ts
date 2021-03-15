@@ -2,7 +2,7 @@ import {EMessengerModalType} from '@constants/messenger'
 import {IAttemptDeleteChannelPayload} from '@models/messenger'
 
 export interface IState {
-    modal: {
+    modalData: {
         open: boolean
         type: EMessengerModalType | null
         attemptDeleteChannelPayload?: IAttemptDeleteChannelPayload
@@ -10,7 +10,7 @@ export interface IState {
 }
 
 export const initialState: IState = {
-    modal: {
+    modalData: {
         open: false,
         type: null
     }

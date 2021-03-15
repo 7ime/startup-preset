@@ -8,6 +8,7 @@ import MessengerMain from '@components/common/messenger/messanger-main'
 import MessengerRightAside from '@components/common/messenger/messanger-right-aside'
 import {ChatAction} from '@store/chat'
 import {EStatusChat} from '@constants/messenger'
+import MessengerModalContainer from '@components/common/messenger/messenger-modals/messenger-modal-container'
 
 const Messenger = () => {
     const dispatch = useDispatch()
@@ -23,6 +24,8 @@ const Messenger = () => {
                 <MessengerMain />
                 <MessengerRightAside />
             </MessengerContainer>
+
+            <MessengerModalContainer />
         </div>
     )
 }

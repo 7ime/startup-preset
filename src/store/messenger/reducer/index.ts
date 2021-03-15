@@ -5,12 +5,12 @@ import {EMessengerModalType} from '@constants/messenger'
 export const reducer = createReducer(MessengerState.initialState, (builder) => {
     builder
         .addCase(MessengerAction.attemptDeleteChannel, (state, {payload}) => {
-            state.modal.open = true
-            state.modal.type = EMessengerModalType.deleteChannel
-            state.modal.attemptDeleteChannelPayload = payload
+            state.modalData.open = true
+            state.modalData.type = EMessengerModalType.deleteChannel
+            state.modalData.attemptDeleteChannelPayload = payload
         })
         .addCase(MessengerAction.closeModal, (state) => {
-            state.modal = {
+            state.modalData = {
                 open: false,
                 type: null
             }

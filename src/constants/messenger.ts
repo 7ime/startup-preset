@@ -27,5 +27,5 @@ export enum EChatNotificationsState {
 }
 
 export enum EMessengerModalType {
-    deleteChannel
+    deleteChannel = 1
 }

@@ -72,7 +72,7 @@ const ChatListItem = ({ data }: IProps) => {
     return (
         <div className={classNames} onContextMenu={handleContextMenu}>
             {
-                contextMenuData.open && <ChatListContextMenu chatId={id} onClose={handleCloseContextMenu} cursorPosition={contextMenuData.cursorPosition} />
+                contextMenuData.open && <ChatListContextMenu data={data} onClose={handleCloseContextMenu} cursorPosition={contextMenuData.cursorPosition} />
             }
             <div className={css.inner}>
                 <div className={css.avatarWrap}>
