@@ -1,4 +1,4 @@
-import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/chat'
+import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/messenger'
 import {IAvatar} from '@models/avatar'
 
 export namespace IChat {

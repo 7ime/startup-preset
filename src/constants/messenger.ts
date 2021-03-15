@@ -25,3 +25,7 @@ export enum EChatNotificationsState {
     disabled = 'disabled',
     enabled = 'enabled',
 }
+
+export enum EMessengerModalType {
+    deleteChannel
+}

@@ -2,7 +2,7 @@ import {IFetcher} from '@api/fetcher/model'
 import {IChatService} from './model'
 import {injectPropertyFetcher} from '@toolbox/injects/injects-fetcher'
 import {IChat} from '@entities/chat'
-import {EStatusChat} from '@constants/chat'
+import {EStatusChat} from '@constants/messenger'
 import MockChat from '../../__mocks__/chat'
 
 export default class ChatService implements IChatService {

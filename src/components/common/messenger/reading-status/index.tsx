@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import css from './index.module.scss'
-import {EMessageReadingStatus} from '@constants/chat'
+import {EMessageReadingStatus} from '@constants/messenger'
 import {IParentClass} from '@models/shared'
 import classnames from 'classnames'
 

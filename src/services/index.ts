@@ -6,6 +6,7 @@ import SwService from '@services/sw-service'
 import PostMessageService from '@services/post-message-service'
 import CacheService from '@services/cache-service'
 import ChatService from '@services/chat-service'
+import MessengerService from '@services/messenger-service'
 
 class Service implements IService {
     jsonPlaceholderService = new JsonPlaceholderService()
@@ -15,6 +16,7 @@ class Service implements IService {
     postMessage = new PostMessageService()
     cacheService = new CacheService()
     chatService = new ChatService()
+    messengerService = new MessengerService()
 }
 
 const service = new Service()

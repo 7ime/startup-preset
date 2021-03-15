@@ -1,7 +1,7 @@
 import {v4 as uuid} from 'uuid'
 import moment from 'moment'
 import {IChat} from '@entities/chat'
-import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/chat'
+import {EChatNotificationsState, EMessageReadingStatus, EStatusChat, ETypeChat, ETypeSender} from '@constants/messenger'
 import MockAvatar from './avatar'
 import {getDynamicAvatarColor} from '@helpers/get-dynamic-avatar-color'
 import {getAvatarInitials} from '@helpers/get-avatar-initilas'

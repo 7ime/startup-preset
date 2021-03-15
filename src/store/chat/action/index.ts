@@ -1,6 +1,6 @@
 import {createAction} from '@reduxjs/toolkit'
 import {IChat} from '@entities/chat'
-import {EStatusChat} from '@constants/chat'
+import {EStatusChat} from '@constants/messenger'
 
 export enum EActions {
     GetUsedList = '[Chat] GetUsedList',

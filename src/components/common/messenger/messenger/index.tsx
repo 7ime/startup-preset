@@ -7,7 +7,7 @@ import MessengerLeftAside from '@components/common/messenger/messanger-left-asid
 import MessengerMain from '@components/common/messenger/messanger-main'
 import MessengerRightAside from '@components/common/messenger/messanger-right-aside'
 import {ChatAction} from '@store/chat'
-import {EStatusChat} from '@constants/chat'
+import {EStatusChat} from '@constants/messenger'
 
 const Messenger = () => {
     const dispatch = useDispatch()

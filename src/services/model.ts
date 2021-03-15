@@ -5,6 +5,7 @@ import {ISwService} from '@services/sw-service/model'
 import {IPostMessageService} from '@services/post-message-service/model'
 import {ICacheService} from '@services/cache-service/model'
 import {IChatService} from '@services/chat-service/model'
+import {IMessengerService} from '@services/messenger-service/model'
 
 export interface IService {
     jsonPlaceholderService: IJsonPlaceholderService
@@ -14,4 +15,5 @@ export interface IService {
     postMessage: IPostMessageService
     cacheService: ICacheService
     chatService: IChatService
+    messengerService: IMessengerService
 }

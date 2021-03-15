@@ -1,4 +1,4 @@
-import {ETypeChat, ETypeSender} from '@constants/chat'
+import {ETypeChat, ETypeSender} from '@constants/messenger'
 
 export const checkShowSenderInChatList = (typeChat: ETypeChat, senderType: ETypeSender): boolean => {
     if (typeChat === ETypeChat.channel) return false
