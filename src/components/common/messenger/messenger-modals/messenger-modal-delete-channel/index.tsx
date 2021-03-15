@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import {useDispatch, useSelector} from 'react-redux'
 import {MessengerAction, MessengerSelector} from '@store/messenger'
 import MessengerModal from '@components/common/messenger/messenger-modals/messenger-modal'
+import Button from '@components/ui/buttons/components/button'
 
 interface IProps extends IParentClass {
 
@@ -26,9 +27,20 @@ const MessengerModalDeleteChannel = ({ parentClass }: IProps) => {
     if (!payload) return null
 
     return (
-        <MessengerModal onClose={handleClose}>
+        <MessengerModal onClose={handleClose} parentClass={css.modal}>
             <div className={classNames}>
-                123
+                <div className={css.text}>
+                    Are you sure you want to delete all message history and leave «{payload.name}»
+                </div>
+
+                <div className={css.text}>
+                    This action cannot be undone
+                </div>
+
+                <div className={css.actions}>
+                    <Button onClick={() => undefined} type={'primary'} fill={'basic'} parentClass={css.button}>CANCEL</Button>
+                    <Button onClick={() => undefined} type={'warning'} fill={'basic'} parentClass={css.button}>LEAVE</Button>
+                </div>
             </div>
         </MessengerModal>
     )

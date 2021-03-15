@@ -19,7 +19,6 @@ interface IProps {
 
 const ChatListItem = ({ data }: IProps) => {
     const {
-        id,
         avatar,
         type,
         name,

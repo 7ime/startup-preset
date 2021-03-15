@@ -1,6 +1,29 @@
 @import '~@styles/variables/colors.module.scss';
 @import '~@styles/variables/shared.module.scss';
 
-.root {
+.modal {
+    min-width: 321px;
+    max-width: 321px;
+    padding: 5px 20px 10px;
+}
 
+.root {
+    .text {
+        margin-top: 25px;
+        font-size: 13px;
+    }
+
+    .actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+            margin-right: 5px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
 }

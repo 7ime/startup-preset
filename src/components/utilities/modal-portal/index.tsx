@@ -41,14 +41,17 @@ const ModalPortal: React.FC<IProps> = (props) => {
         return () => switchScroll(true)
     }, [])
 
-    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-        if (onClose && (event.target === event.currentTarget)) onClose()
+    const handleClick = () => {
+        onClose()
     }
 
     return (createPortal(
         show ? (
-            <div className={classNames} onClick={handleClick}>
-                {children}
+            <div className={classNames}>
+                <div className={css.dimmer} onClick={handleClick}/>
+                <div className={css.content}>
+                    {children}
+                </div>
             </div>
         ) : null,
         modalNode as HTMLDivElement,

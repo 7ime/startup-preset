@@ -2,5 +2,8 @@
 @import '~@styles/variables/shared.module.scss';
 
 .root {
-
+    display: flex;
+    background-color: $white;
+    border-radius: $radius;
+    box-shadow: 0 0 5px rgba($black, 0.05);
 }
