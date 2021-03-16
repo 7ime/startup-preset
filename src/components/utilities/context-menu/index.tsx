@@ -1,16 +1,21 @@
 import * as React from 'react'
+import ReactDOM from 'react-dom'
 import classnames from 'classnames'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
-import OutsideClick from '@components/utilities/outside-click'
 import {ICursorPosition} from '@models/metrics'
+import {invariant} from '@helpers/invariant'
 
 interface IProps extends IParentClass {
-    onOutsideClick(event: MouseEvent): unknown
+    onOutsideClick(event: React.MouseEvent): unknown
     cursorPosition: ICursorPosition
 }
 
+const modalNode = document.querySelector<HTMLDivElement>('#context-menu-root')
+
 const ContextMenu: React.FC<IProps> = (props) => {
+    invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "modal-root"')
+
     const {
         children,
         onOutsideClick,
@@ -19,7 +24,7 @@ const ContextMenu: React.FC<IProps> = (props) => {
     } = props
 
     const classNames = classnames(
-        css.root,
+        css.contextMenu,
         parentClass
     )
 
@@ -69,17 +74,32 @@ const ContextMenu: React.FC<IProps> = (props) => {
         checkBoundary()
     }, [])
 
+    const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        onOutsideClick(event)
+    }
+
+    const handleOverlayContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+        event.preventDefault()
+        event.stopPropagation()
+
+        onOutsideClick(event)
+
+        return false
+    }
+
     return (
-        <div className={css.wrapper}>
-            <OutsideClick onOutsideClick={onOutsideClick}>
+        ReactDOM.createPortal((
+            <div className={css.contextMenuWrapper} onClick={handleOverlayClick} onContextMenu={handleOverlayContextMenu}>
+                <div className={css.overlay} />
+
                 <div ref={ref} className={classNames} style={{
                     top: cursorPosition.y + 'px',
                     left: cursorPosition.x + 'px',
                 }}>
                     {children}
                 </div>
-            </OutsideClick>
-        </div>
+            </div>
+        ), modalNode as HTMLDivElement)
     )
 }
 

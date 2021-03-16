@@ -1,18 +1,23 @@
 @import '~@styles/variables/colors.module.scss';
 @import '~@styles/variables/shared.module.scss';
 
-.wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.contextMenuWrapper {
+    position: relative;
     z-index: $zIndexContextMenu;
-}
 
-.root {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: $zIndexContextMenu;
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .contextMenu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+    }
 }

@@ -26,7 +26,7 @@ const ChatListContextMenu = (props: IProps) => {
     } = props
 
     const classNames = classnames(
-        css.root,
+        css.chatListContextMenu,
         parentClass
     )
 
@@ -44,16 +44,14 @@ const ChatListContextMenu = (props: IProps) => {
     }
 
     return (
-        <div className={classNames}>
-            <ChatContextMenu onOutsideClick={handleOutsideClick} parentClass={css.contextMenu} cursorPosition={cursorPosition}>
-                <ChatContextMenuItem onClick={() => undefined}>Archive chat</ChatContextMenuItem>
-                <ChatContextMenuItem onClick={() => undefined}>Pin to top</ChatContextMenuItem>
-                <ChatContextMenuItem onClick={() => undefined}>Disable Notifications</ChatContextMenuItem>
-                <ChatContextMenuItem onClick={() => undefined}>Make as unread</ChatContextMenuItem>
-                <ChatContextMenuItem onClick={handleDelete}>Delete and leave</ChatContextMenuItem>
-                <ChatContextMenuItem onClick={() => undefined}>Clear history</ChatContextMenuItem>
-            </ChatContextMenu>
-        </div>
+        <ChatContextMenu onOutsideClick={handleOutsideClick} parentClass={classNames} cursorPosition={cursorPosition}>
+            <ChatContextMenuItem onClick={() => undefined}>Archive chat</ChatContextMenuItem>
+            <ChatContextMenuItem onClick={() => undefined}>Pin to top</ChatContextMenuItem>
+            <ChatContextMenuItem onClick={() => undefined}>Disable Notifications</ChatContextMenuItem>
+            <ChatContextMenuItem onClick={() => undefined}>Make as unread</ChatContextMenuItem>
+            <ChatContextMenuItem onClick={handleDelete}>Delete and leave</ChatContextMenuItem>
+            <ChatContextMenuItem onClick={() => undefined}>Clear history</ChatContextMenuItem>
+        </ChatContextMenu>
     )
 }
 

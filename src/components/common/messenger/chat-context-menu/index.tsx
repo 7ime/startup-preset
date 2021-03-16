@@ -6,7 +6,7 @@ import {ICursorPosition} from '@models/metrics'
 import ContextMenu from '@components/utilities/context-menu'
 
 interface IProps extends IParentClass {
-    onOutsideClick(event: MouseEvent): unknown
+    onOutsideClick(event: React.MouseEvent): unknown
     cursorPosition: ICursorPosition
 }
 
@@ -19,7 +19,8 @@ const ChatContextMenu: React.FC<IProps> = (props) => {
     } = props
 
     const classNames = classnames(
-        css.root,
+        css.chatContextMenu,
+        'transition-context-menu',
         parentClass
     )
 

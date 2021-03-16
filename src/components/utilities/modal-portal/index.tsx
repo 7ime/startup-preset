@@ -28,7 +28,7 @@ const ModalPortal: React.FC<IProps> = (props) => {
     } = props
 
     const classNames = classnames(
-        css.root,
+        css.modal,
         parentClass
     )
 
@@ -48,7 +48,7 @@ const ModalPortal: React.FC<IProps> = (props) => {
     return (createPortal(
         show ? (
             <div className={classNames}>
-                <div className={css.dimmer} onClick={handleClick}/>
+                <div className={css.overlay} onClick={handleClick}/>
                 <div className={css.content}>
                     {children}
                 </div>

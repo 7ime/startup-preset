@@ -26,16 +26,14 @@ store.dispatch(UiAction.initTheme())
 store.dispatch(UiAction.setLanguage(i18next.language as EI18nLanguages))
 
 ReactDOM.render((
-    <React.StrictMode>
-        <Provider store={store}>
-            <ServiceContext.Provider value={getService()}>
-                <Theme>
-                    <BrowserRouter>
-                        <HelmetSet/>
-                        <App/>
-                    </BrowserRouter>
-                </Theme>
-            </ServiceContext.Provider>
-        </Provider>
-    </React.StrictMode>
+    <Provider store={store}>
+        <ServiceContext.Provider value={getService()}>
+            <Theme>
+                <BrowserRouter>
+                    <HelmetSet/>
+                    <App/>
+                </BrowserRouter>
+            </Theme>
+        </ServiceContext.Provider>
+    </Provider>
 ), document.getElementById('root'))

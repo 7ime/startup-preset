@@ -1,10 +1,6 @@
 @import '~@styles/variables/colors.module.scss';
 @import '~@styles/variables/shared.module.scss';
 
-.root {
-    position: relative;
-
-    .contextMenu {
-        width: 180px;
-    }
+.chatListContextMenu {
+    width: 180px;
 }
