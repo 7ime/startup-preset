@@ -89,8 +89,8 @@ const ContextMenu: React.FC<IProps> = (props) => {
 
     return (
         ReactDOM.createPortal((
-            <div className={css.contextMenuWrapper} onClick={handleOverlayClick} onContextMenu={handleOverlayContextMenu}>
-                <div className={css.overlay} />
+            <div className={css.contextMenuWrapper}>
+                <div className={css.overlay} onClick={handleOverlayClick} onContextMenu={handleOverlayContextMenu} />
 
                 <div ref={ref} className={classNames} style={{
                     top: cursorPosition.y + 'px',
