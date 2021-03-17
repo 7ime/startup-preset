@@ -4,25 +4,14 @@ var serviceWorkerOption = {
     "/static/fonts/OpenSans-Regular.3ed9575d.ttf",
     "/static/fonts/OpenSans-SemiBold.ba5cde21.ttf",
     "/static/fonts/OpenSans-Bold.1025a6e0.ttf",
-    "/static/media/typescript.e5808285.png",
-    "/static/media/javascript.0e4fdce8.png",
-    "/static/media/babel.9d903619.png",
-    "/static/media/jest.77abd319.png",
-    "/static/media/react.08edc05c.png",
-    "/static/media/redux-saga.42e84e4c.png",
-    "/static/media/sass.09fa2973.png",
-    "/static/media/storybook.cdc65343.png",
-    "/static/media/css.9b4a2a12.png",
     "/main.e8bc2fc1.css",
-    "/main.0a7c8580.bundle.js",
-    "/vendors~main.96f2c448.bundle.js",
+    "/main.a44957e2.bundle.js",
+    "/vendors~main.9b59cd9d.bundle.js",
     "/2.21a347c4.css",
-    "/2.00deabe6.bundle.js",
-    "/3.a94f8672.css",
-    "/3.a9c25570.bundle.js",
-    "/4.e8b5a340.bundle.js",
-    "/5.f08452e6.css",
-    "/5.683ad916.bundle.js"
+    "/2.9fd90685.bundle.js",
+    "/3.1b553301.bundle.js",
+    "/4.f08452e6.css",
+    "/4.d31195e2.bundle.js"
   ]
 };
         
