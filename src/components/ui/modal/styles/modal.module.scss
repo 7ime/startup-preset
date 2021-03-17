@@ -30,12 +30,11 @@
     }
 }
 
-
-:global(.transition-modal-enter).modal {
+:global(.transition-modal-enter).modal, :global(.transition-modal-appear).modal {
     opacity: 0;
 }
 
-:global(.transition-modal-enter-active).modal {
+:global(.transition-modal-enter-active).modal, :global(.transition-modal-appear-active).modal {
     opacity: 1;
     transition: 0.3s ease-in-out;
 }

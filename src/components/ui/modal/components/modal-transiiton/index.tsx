@@ -6,12 +6,12 @@ import IModal from '@components/ui/modal/model'
 const ModalTransition: React.FC<IModal.TransitionProps> = (props) => {
     const {
         children,
-        in: inProp,
-        timeout = 300
+        timeout = 300,
+        ...restProps
     } = props
 
     return (
-        <CSSTransition in={inProp} timeout={timeout} classNames={TRANSITION_CLASSNAME.modal} unmountOnExit>
+        <CSSTransition timeout={timeout} classNames={TRANSITION_CLASSNAME.modal} unmountOnExit {...restProps}>
             {children}
         </CSSTransition>
     )

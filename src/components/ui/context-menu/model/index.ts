@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {ICursorPosition} from '@models/metrics'
-import {IParentClass, ITransitionProps} from '@models/shared'
+import {IParentClass} from '@models/shared'
+import {CSSTransitionProps} from 'react-transition-group/CSSTransition'
 
 namespace IContextMenu {
     export interface Props extends IParentClass {
@@ -8,9 +9,7 @@ namespace IContextMenu {
         cursorPosition: ICursorPosition
     }
 
-    export interface TransitionProps extends ITransitionProps {
-
-    }
+    export type TransitionProps = {} & Partial<CSSTransitionProps>
 }
 
 export default IContextMenu

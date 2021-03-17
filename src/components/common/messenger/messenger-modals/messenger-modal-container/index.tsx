@@ -4,12 +4,10 @@ import {useSelector} from 'react-redux'
 import {MessengerSelector} from '@store/messenger'
 import {EMessengerModalType} from '@constants/messenger'
 import MessengerModalDeleteChannel from '@components/common/messenger/messenger-modals/messenger-modal-delete-channel'
-import ModalTransition from '@components/ui/modal/components/modal-transiiton'
 
-const getModal = (modalType: EMessengerModalType) => {
-    switch (modalType) {
+const getModal = (type: EMessengerModalType) => {
+    switch (type) {
         case EMessengerModalType.deleteChannel: return <MessengerModalDeleteChannel />
-        default: return <div hidden />
     }
 }
 
@@ -19,10 +17,12 @@ const MessengerModalContainer = () => {
         type
     } = useSelector(MessengerSelector.getModalData)
 
+    if (!open || !type) return null
+
     return (
-        <ModalTransition in={!!(open && type)}>
-            {getModal(type as EMessengerModalType)}
-        </ModalTransition>
+        <React.Fragment>
+            {getModal(type)}
+        </React.Fragment>
     )
 }
 
