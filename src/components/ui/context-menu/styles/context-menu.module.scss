@@ -1,0 +1,53 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.contextMenuWrapper {
+    position: relative;
+    z-index: $zIndexContextMenu;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.contextMenu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+    &.left-top {
+        transform-origin: 0 0;
+    }
+
+    &.left-bottom {
+        transform-origin: 0 100%;
+    }
+
+    &.right-top {
+        transform-origin: 100% 0;
+    }
+
+    &.right-bottom {
+        transform-origin: 100% 100%;
+    }
+}
+
+:global(.transition-context-menu-enter) .contextMenu {
+    transform: scale(0);
+}
+
+:global(.transition-context-menu-enter-active) .contextMenu {
+    transform: scale(1);
+    transition: 0.15s ease-in-out;
+}
+
+:global(.transition-context-menu-exit) .contextMenu {
+    transform: scale(0);
+    transition: 0.15s ease-in-out;
+}

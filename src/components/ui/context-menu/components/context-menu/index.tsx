@@ -1,19 +1,19 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 import classnames from 'classnames'
-import css from './index.module.scss'
-import {IParentClass} from '@models/shared'
+import css from '../../styles/context-menu.module.scss'
 import {ICursorPosition} from '@models/metrics'
 import {invariant} from '@helpers/invariant'
-
-interface IProps extends IParentClass {
-    onOutsideClick(event: React.MouseEvent): unknown
-    cursorPosition: ICursorPosition
-}
+import IContextMenu from '@components/ui/context-menu/model'
 
 const modalNode = document.querySelector<HTMLDivElement>('#context-menu-root')
 
-const ContextMenu: React.FC<IProps> = (props) => {
+interface IDirection {
+    x: 'left' | 'right'
+    y: 'top' | 'bottom'
+}
+
+const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
     invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "modal-root"')
 
     const {
@@ -23,13 +23,18 @@ const ContextMenu: React.FC<IProps> = (props) => {
         parentClass,
     } = props
 
-    const classNames = classnames(
-        css.contextMenu,
-        parentClass
-    )
-
     const ref = React.useRef<HTMLDivElement>(null)
     const [cursorPosition, setCursorPosition] = React.useState<ICursorPosition>(internalCursorPosition)
+    const [direction, setDirection] = React.useState<IDirection>({
+        x: 'left',
+        y: 'top'
+    })
+
+    const classNames = classnames(
+        css.contextMenu,
+        css[`${direction.x}-${direction.y}`],
+        parentClass
+    )
 
     React.useEffect(() => {
         const checkBoundary = () => {
@@ -49,12 +54,17 @@ const ContextMenu: React.FC<IProps> = (props) => {
             let newX = cursorPosition.x
             let newY = cursorPosition.y
 
+            let newDirectionX = direction.x
+            let newDirectionY = direction.y
+
             if (screenWidth < x + menuWidth) {
                 newX = x - menuWidth
+                newDirectionX = 'right'
             }
 
             if (screenHeight < y + menuHeight) {
                 newY = y - menuHeight
+                newDirectionY = 'bottom'
             }
 
             if (newX < 0) {
@@ -68,6 +78,11 @@ const ContextMenu: React.FC<IProps> = (props) => {
             setCursorPosition({
                 x: newX,
                 y: newY,
+            })
+
+            setDirection({
+                x: newDirectionX,
+                y: newDirectionY
             })
         }
 

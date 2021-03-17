@@ -12,7 +12,7 @@ import {getCounterForView} from '@helpers/get-counter-for-view'
 import {checkShowSenderInChatList} from '@helpers/check-show-sender-in-chat-list'
 import {getDateViewForChatList} from '@helpers/date/get-date-view-for-chat-list'
 import ChatListContextMenu from '@components/common/messenger/chat-list-context-menu'
-import TransitionContextMenu from '@components/transitions/transition-context-menu'
+import ContextMenuTransition from '@components/ui/context-menu/components/contex-menu-transiiton'
 
 interface IProps {
     data: IChat.ListItemModel
@@ -71,9 +71,9 @@ const ChatListItem = ({ data }: IProps) => {
 
     return (
         <React.Fragment>
-            <TransitionContextMenu in={contextMenuData.open}>
+            <ContextMenuTransition in={contextMenuData.open}>
                 <ChatListContextMenu data={data} onClose={handleCloseContextMenu} cursorPosition={contextMenuData.cursorPosition} />
-            </TransitionContextMenu>
+            </ContextMenuTransition>
 
             <div className={classNames} onContextMenu={handleContextMenu}>
                 <div className={css.inner}>

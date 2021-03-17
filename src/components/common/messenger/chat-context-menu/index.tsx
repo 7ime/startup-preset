@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
 import {ICursorPosition} from '@models/metrics'
-import ContextMenu from '@components/utilities/context-menu'
+import ContextMenu from '@components/ui/context-menu/components/context-menu'
 
 interface IProps extends IParentClass {
     onOutsideClick(event: React.MouseEvent): unknown
@@ -20,7 +20,6 @@ const ChatContextMenu: React.FC<IProps> = (props) => {
 
     const classNames = classnames(
         css.chatContextMenu,
-        'transition-context-menu',
         parentClass
     )
 
