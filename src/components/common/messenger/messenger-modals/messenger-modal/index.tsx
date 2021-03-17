@@ -17,7 +17,7 @@ const MessengerModal: React.FC<IProps> = ({ parentClass, onClose, children }) =>
 
     const [show, setShow] = React.useState(true)
 
-    const handleClose = () => {
+    const handleOutsideClick = () => {
         setShow(false)
     }
 
@@ -26,7 +26,7 @@ const MessengerModal: React.FC<IProps> = ({ parentClass, onClose, children }) =>
     }
 
     return (
-        <Modal onClose={handleClose} in={show} onExited={handleExited}>
+        <Modal onOutsideClick={handleOutsideClick} in={show} onExited={handleExited}>
             <div className={classNames}>
                 {children}
             </div>

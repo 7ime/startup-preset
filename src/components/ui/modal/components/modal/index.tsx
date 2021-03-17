@@ -22,7 +22,7 @@ const Modal: React.FC<IModal.Props> = (props) => {
     const {
         in: inProp,
         children,
-        onClose,
+        onOutsideClick,
         onExited,
         parentClass,
     } = props
@@ -39,7 +39,7 @@ const Modal: React.FC<IModal.Props> = (props) => {
     }, [])
 
     const handleClick = () => {
-        onClose()
+        onOutsideClick()
     }
 
     return (createPortal(

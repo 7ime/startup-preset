@@ -3,7 +3,7 @@ import {IParentClass} from '@models/shared'
 namespace IModal {
     export interface Props extends IParentClass {
         in: boolean
-        onClose(): unknown
+        onOutsideClick(): unknown
         onExited?(node: HTMLElement): unknown
     }
 }

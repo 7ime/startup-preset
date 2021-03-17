@@ -21,7 +21,7 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
     const {
         in: inProp,
         children,
-        onClose,
+        onOutsideClick,
         onExited,
         cursorPosition: internalCursorPosition,
         parentClass,
@@ -94,14 +94,14 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
     }, [])
 
     const handleOverlayClick = () => {
-        onClose()
+        onOutsideClick()
     }
 
     const handleOverlayContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault()
         event.stopPropagation()
 
-        onClose()
+        onOutsideClick()
 
         return false
     }

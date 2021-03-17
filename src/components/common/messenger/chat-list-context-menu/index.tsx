@@ -33,7 +33,7 @@ const ChatListContextMenu = (props: IProps) => {
 
     const [show, setShow] = React.useState(true)
 
-    const handleClose = () => {
+    const handleOutsideClick = () => {
         setShow(false)
     }
 
@@ -51,7 +51,7 @@ const ChatListContextMenu = (props: IProps) => {
     }
 
     return (
-        <ContextMenu in={show} onClose={handleClose} cursorPosition={cursorPosition} onExited={handleExited}>
+        <ContextMenu in={show} onOutsideClick={handleOutsideClick} cursorPosition={cursorPosition} onExited={handleExited}>
             <ChatContextMenuList parentClass={classNames}>
                 <ChatContextMenuItem onClick={() => undefined}>Archive chat</ChatContextMenuItem>
                 <ChatContextMenuItem onClick={() => undefined}>Pin to top</ChatContextMenuItem>
