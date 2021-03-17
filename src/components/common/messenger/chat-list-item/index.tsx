@@ -12,7 +12,7 @@ import {getCounterForView} from '@helpers/get-counter-for-view'
 import {checkShowSenderInChatList} from '@helpers/check-show-sender-in-chat-list'
 import {getDateViewForChatList} from '@helpers/date/get-date-view-for-chat-list'
 import ChatListContextMenu from '@components/common/messenger/chat-list-context-menu'
-import ContextMenuTransition from '@components/ui/context-menu/components/contex-menu-transiiton'
+import {ICursorPosition} from '@models/metrics'
 
 interface IProps {
     data: IChat.ListItemModel
@@ -36,34 +36,19 @@ const ChatListItem = ({ data }: IProps) => {
         {[css.is_active]: selected},
     )
 
-    const [contextMenuData, setContextMenuData] = React.useState({
-        open: false,
-        cursorPosition: {
-            x: 0,
-            y: 0
-        }
-    })
+    const [cursorPosition, setCursorPosition] = React.useState<ICursorPosition | null>(null)
 
     const handleCloseContextMenu = () => {
-        setContextMenuData({
-            open: false,
-            cursorPosition: {
-                x: 0,
-                y: 0,
-            }
-        })
+        setCursorPosition(null)
     }
 
     const handleContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault()
         event.stopPropagation()
 
-        setContextMenuData({
-            open: true,
-            cursorPosition: {
-                x: event.pageX,
-                y: event.pageY,
-            }
+        setCursorPosition({
+            x: event.pageX,
+            y: event.pageY,
         })
 
         return false
@@ -71,9 +56,9 @@ const ChatListItem = ({ data }: IProps) => {
 
     return (
         <React.Fragment>
-            <ContextMenuTransition in={contextMenuData.open}>
-                <ChatListContextMenu data={data} onClose={handleCloseContextMenu} cursorPosition={contextMenuData.cursorPosition} />
-            </ContextMenuTransition>
+            {
+                cursorPosition && <ChatListContextMenu data={data} onClose={handleCloseContextMenu} cursorPosition={cursorPosition} />
+            }
 
             <div className={classNames} onContextMenu={handleContextMenu}>
                 <div className={css.inner}>

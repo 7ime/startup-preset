@@ -5,6 +5,8 @@ import css from '../../styles/context-menu.module.scss'
 import {ICursorPosition} from '@models/metrics'
 import {invariant} from '@helpers/invariant'
 import IContextMenu from '@components/ui/context-menu/model'
+import {CSSTransition} from 'react-transition-group'
+import {TRANSITION_CLASSNAME} from '@constants/transition-classname'
 
 const modalNode = document.querySelector<HTMLDivElement>('#context-menu-root')
 
@@ -17,8 +19,10 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
     invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "context-menu-root"')
 
     const {
+        in: inProp,
         children,
-        onOutsideClick,
+        onClose,
+        onExited,
         cursorPosition: internalCursorPosition,
         parentClass,
     } = props
@@ -89,31 +93,33 @@ const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
         checkBoundary()
     }, [])
 
-    const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
-        onOutsideClick(event)
+    const handleOverlayClick = () => {
+        onClose()
     }
 
     const handleOverlayContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault()
         event.stopPropagation()
 
-        onOutsideClick(event)
+        onClose()
 
         return false
     }
 
     return (
         ReactDOM.createPortal((
-            <div className={css.contextMenuWrapper}>
-                <div className={css.overlay} onClick={handleOverlayClick} onContextMenu={handleOverlayContextMenu} />
+            <CSSTransition in={inProp} timeout={150} classNames={TRANSITION_CLASSNAME.contextMenu} unmountOnExit appear onExited={onExited}>
+                <div className={css.contextMenuWrapper}>
+                    <div className={css.overlay} onClick={handleOverlayClick} onContextMenu={handleOverlayContextMenu} />
 
-                <div ref={ref} className={classNames} style={{
-                    top: cursorPosition.y + 'px',
-                    left: cursorPosition.x + 'px',
-                }}>
-                    {children}
+                    <div ref={ref} className={classNames} style={{
+                        top: cursorPosition.y + 'px',
+                        left: cursorPosition.x + 'px',
+                    }}>
+                        {children}
+                    </div>
                 </div>
-            </div>
+            </CSSTransition>
         ), modalNode as HTMLDivElement)
     )
 }

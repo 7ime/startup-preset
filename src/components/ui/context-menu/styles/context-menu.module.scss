@@ -38,11 +38,11 @@
     }
 }
 
-:global(.transition-context-menu-enter) .contextMenu {
+:global(.transition-context-menu-appear) .contextMenu {
     transform: scale(0);
 }
 
-:global(.transition-context-menu-enter-active) .contextMenu {
+:global(.transition-context-menu-appear-active) .contextMenu {
     transform: scale(1);
     transition: 0.15s ease-in-out;
 }
