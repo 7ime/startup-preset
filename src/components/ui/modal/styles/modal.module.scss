@@ -29,3 +29,18 @@
         z-index: 2;
     }
 }
+
+
+:global(.transition-modal-enter).modal {
+    opacity: 0;
+}
+
+:global(.transition-modal-enter-active).modal {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+:global(.transition-modal-exit).modal {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}

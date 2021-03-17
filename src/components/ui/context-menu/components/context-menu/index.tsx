@@ -14,7 +14,7 @@ interface IDirection {
 }
 
 const ContextMenu: React.FC<IContextMenu.Props> = (props) => {
-    invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "modal-root"')
+    invariant(!!modalNode, 'The "context-menu-root" element was not found. Please ensure your application has an element with the id "context-menu-root"')
 
     const {
         children,

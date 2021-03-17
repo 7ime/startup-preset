@@ -3,7 +3,7 @@ import * as React from 'react'
 import css from './index.module.scss'
 import {IParentClass} from '@models/shared'
 import classnames from 'classnames'
-import ModalPortal from '@components/utilities/modal-portal'
+import Modal from '@components/ui/modal/components/modal'
 
 interface IProps extends IParentClass {
     onClose(): unknown
@@ -16,11 +16,11 @@ const MessengerModal: React.FC<IProps> = ({ parentClass, onClose, children }) =>
     )
 
     return (
-        <ModalPortal onClose={onClose}>
+        <Modal onClose={onClose}>
             <div className={classNames}>
                 {children}
             </div>
-        </ModalPortal>
+        </Modal>
     )
 }
 

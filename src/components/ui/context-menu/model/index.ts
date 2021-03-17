@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {ICursorPosition} from '@models/metrics'
-import {IParentClass} from '@models/shared'
+import {IParentClass, ITransitionProps} from '@models/shared'
 
 namespace IContextMenu {
     export interface Props extends IParentClass {
@@ -8,9 +8,8 @@ namespace IContextMenu {
         cursorPosition: ICursorPosition
     }
 
-    export interface TransitionProps {
-        in: boolean
-        timeout?: number
+    export interface TransitionProps extends ITransitionProps {
+
     }
 }
 

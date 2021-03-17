@@ -1,42 +1,28 @@
 import * as React from 'react'
 
-import css from './index.module.scss'
-import {IParentClass} from '@models/shared'
-import classnames from 'classnames'
 import {useSelector} from 'react-redux'
 import {MessengerSelector} from '@store/messenger'
 import {EMessengerModalType} from '@constants/messenger'
 import MessengerModalDeleteChannel from '@components/common/messenger/messenger-modals/messenger-modal-delete-channel'
-
-interface IProps extends IParentClass {
-
-}
+import ModalTransition from '@components/ui/modal/components/modal-transiiton'
 
 const getModal = (modalType: EMessengerModalType) => {
     switch (modalType) {
         case EMessengerModalType.deleteChannel: return <MessengerModalDeleteChannel />
+        default: return <div hidden />
     }
 }
 
-const MessengerModalContainer = ({ parentClass }: IProps) => {
+const MessengerModalContainer = () => {
     const {
         open,
         type
     } = useSelector(MessengerSelector.getModalData)
 
-    const classNames = classnames(
-        css.root,
-        parentClass
-    )
-
-    if (!open || !type) {
-        return null
-    }
-
     return (
-        <div className={classNames}>
-            {getModal(type)}
-        </div>
+        <ModalTransition in={!!(open && type)}>
+            {getModal(type as EMessengerModalType)}
+        </ModalTransition>
     )
 }
 

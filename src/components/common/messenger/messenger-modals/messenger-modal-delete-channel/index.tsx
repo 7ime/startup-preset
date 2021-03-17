@@ -24,24 +24,26 @@ const MessengerModalDeleteChannel = ({ parentClass }: IProps) => {
         dispatch(MessengerAction.closeModal())
     }
 
-    if (!payload) return null
-
     return (
         <MessengerModal onClose={handleClose} parentClass={css.modal}>
-            <div className={classNames}>
-                <div className={css.text}>
-                    Are you sure you want to delete all message history and leave «{payload.name}»
-                </div>
+            {
+                payload && (
+                    <div className={classNames}>
+                        <div className={css.text}>
+                            Are you sure you want to delete all message history and leave «{payload.name}»
+                        </div>
 
-                <div className={css.text}>
-                    This action cannot be undone
-                </div>
+                        <div className={css.text}>
+                            This action cannot be undone
+                        </div>
 
-                <div className={css.actions}>
-                    <Button onClick={() => undefined} type={'primary'} fill={'basic'} parentClass={css.button}>CANCEL</Button>
-                    <Button onClick={() => undefined} type={'warning'} fill={'basic'} parentClass={css.button}>LEAVE</Button>
-                </div>
-            </div>
+                        <div className={css.actions}>
+                            <Button onClick={() => undefined} type={'primary'} fill={'basic'} parentClass={css.button}>CANCEL</Button>
+                            <Button onClick={() => undefined} type={'warning'} fill={'basic'} parentClass={css.button}>LEAVE</Button>
+                        </div>
+                    </div>
+                )
+            }
         </MessengerModal>
     )
 }
