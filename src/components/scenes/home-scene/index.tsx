@@ -1,21 +1,14 @@
 import * as React from 'react'
 import {Helmet} from 'react-helmet'
-import HomePresentation from './components/home-presentation'
-import {IRouting} from '@routing/model'
+import Messenger from '@components/common/messenger/messenger'
 
-interface IProps extends IRouting.Props {
-
-}
-
-const HomeScene = (props: IProps) => {
+const HomeScene = () => {
     return (
         <React.Fragment>
             <Helmet>
-                <title>Home Page</title>
+                <title>Messenger</title>
             </Helmet>
-            <div className={'container'}>
-                <HomePresentation/>
-            </div>
+            <Messenger />
         </React.Fragment>
     )
 }

@@ -8,8 +8,4 @@ export default class Routes {
     static restApi = class {
         static root = () => i18next.t('nav:restApi.root')
     }
-
-    static messenger = class {
-        static root = () => '/messenger'
-    }
 }
