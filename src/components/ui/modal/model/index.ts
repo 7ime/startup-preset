@@ -1,13 +1,11 @@
 import {IParentClass} from '@models/shared'
-import {CSSTransitionProps} from 'react-transition-group/CSSTransition'
 
 namespace IModal {
     export interface Props extends IParentClass {
+        in: boolean
         onClose(): unknown
+        onExited?(node: HTMLElement): unknown
     }
-
-    export type TransitionProps = {} & Partial<CSSTransitionProps>
-
 }
 
 export default IModal
