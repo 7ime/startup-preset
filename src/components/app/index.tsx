@@ -8,6 +8,7 @@ import {useTranslation} from 'react-i18next'
 
 const HomeScene = React.lazy(() => import('@components/scenes/home-scene'))
 const RestApiScene = React.lazy(() => import('@components/scenes/rest-api-scene'))
+const LoginScene = React.lazy(() => import('@components/scenes/login-scene'))
 
 const App = () => {
     useTranslation()
@@ -23,6 +24,7 @@ const App = () => {
             <Switch>
                 <Route path={Routes.home.root()} component={HomeScene} exact/>
                 <Route path={Routes.restApi.root()} component={RestApiScene}/>
+                <Route path={Routes.login.root()} component={LoginScene}/>
                 <Redirect from='*' to={Routes.home.root()} exact/>
             </Switch>
         </React.Suspense>

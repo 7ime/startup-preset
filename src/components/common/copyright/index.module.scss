@@ -1,6 +1,9 @@
 @import '~@styles/variables/colors.module.scss';
 @import '~@styles/variables/shared.module.scss';
 
-.root {
-    border-right: 1px solid $border_color;
+.copyright {
+    display: flex;
+    justify-content: center;
+    color: $black;
+    font-size: 12px;
 }

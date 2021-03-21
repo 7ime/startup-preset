@@ -13,7 +13,7 @@
     transition: $transition;
 
     &.theme-dark {
-        background-color: lighten($grey_dark, 10%);
+        background-color: lighten($black_90, 10%);
     }
 
     &.is_disabled {
