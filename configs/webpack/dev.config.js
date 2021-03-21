@@ -5,11 +5,11 @@ const commonConfig = require('./common.config')
 const paths = require('./tools/paths')
 const plugins = require('./tools/plugins')
 
+const port = '8081'
 const mode = 'development'
 process.env.NODE_ENV = mode
 
 module.exports = function (webpackEnv, argv) {
-
     return merge(commonConfig, {
         mode,
         output: {
@@ -22,8 +22,10 @@ module.exports = function (webpackEnv, argv) {
             })
         ],
         devServer: {
+            host: '0.0.0.0',
+            public: require('ip').address() + ':' + port,
             contentBase: resolvePath(paths.source),
-            port: 8081,
+            port,
             hot: true,
             open: true,
             index: 'index.html',

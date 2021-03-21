@@ -13,7 +13,6 @@ import App from './components/app'
 import i18next from '@i18n/index'
 import saga from '@store/saga'
 import {sagaMiddleware} from '@store/middleware'
-import {SwAction} from '@store/sw'
 import Theme from '@components/common/theme'
 import {UiAction} from '@store/ui'
 import {EI18nLanguages} from '@constants/i18n'
@@ -21,7 +20,6 @@ import {EI18nLanguages} from '@constants/i18n'
 sagaMiddleware.run(saga)
 
 const store = getAppStore()
-store.dispatch(SwAction.unregister())
 store.dispatch(UiAction.initTheme())
 store.dispatch(UiAction.setLanguage(i18next.language as EI18nLanguages))
 
