@@ -55,7 +55,7 @@
         }
     }
 
-    &.full.primary {
+    &.solid.primary {
         &, &:visited {
             border-color: $blue;
             background-color: $blue;
@@ -74,7 +74,7 @@
         }
     }
 
-    &.full.secondary {
+    &.solid.secondary {
         &, &:visited {
             border-color: $green;
             background-color: $green;
@@ -112,7 +112,7 @@
         }
     }
 
-    &.full.warning {
+    &.solid.warning {
         &, &:visited {
             border-color: $red;
             background-color: $blue_10;

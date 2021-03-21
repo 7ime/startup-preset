@@ -11,7 +11,7 @@ namespace IButton {
         target?: Target
         type?: 'primary' | 'secondary' | 'warning'
         shape?: 'round'
-        fill?: 'full' | 'outline' | 'basic'
+        fill?: 'solid' | 'outline' | 'basic'
         loader?: boolean
         disabled?: boolean
         title?: string
