@@ -72,6 +72,7 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
         isFocused,
         nodeEl,
         autofocus,
-        classNames
+        classNames,
+        setValue
     }
 }

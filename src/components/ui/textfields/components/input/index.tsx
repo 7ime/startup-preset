@@ -23,11 +23,13 @@ const Input = (props: ITextField.InputProps) => {
         isFocused,
         nodeEl,
         autofocus,
-        classNames
+        classNames,
+        setValue
     } = useTextField<HTMLInputElement>(props)
 
     const handleReset = React.useCallback(() => {
         onReset && onReset()
+        setValue('')
     }, [])
 
     return (
@@ -45,7 +47,7 @@ const Input = (props: ITextField.InputProps) => {
                        tabIndex={-1}
                        type={'text'}/>
                 {
-                    isFocused && onReset && (
+                    isFocused && (
                         <div className={css.triggers}>
                             <div className={classnames(css.trigger, css.triggerClear)} onMouseDown={handleReset}/>
                         </div>
