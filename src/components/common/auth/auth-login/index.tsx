@@ -39,7 +39,7 @@ const AuthLogin = () => {
         resolver: yupResolver(schema),
     })
 
-    const onSubmit = React.useCallback((data: IFieldsValues) => {
+    const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
         console.log(data)
     }, [])
 
@@ -49,7 +49,7 @@ const AuthLogin = () => {
                 <AuthTitle>{t('auth:login.title')}</AuthTitle>
                 <AuthDescription parentClass={css.description}>{t('auth:login.description')}</AuthDescription>
 
-                <AuthForm onSubmit={handleSubmit(onSubmit)}>
+                <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
                         <Input label={'Email'} value={''} onChange={() => undefined} />
                     </AuthFormRow>
