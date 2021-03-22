@@ -2,8 +2,8 @@ import * as React from 'react'
 import classnames from 'classnames'
 import {IRadio} from '../../model'
 import css from '../../styles/radio-group.module.scss'
-import MessageValidationContainer from '../../../message-validation-container'
 import {invariant} from '../../../../../helpers/invariant'
+import ValidationMessage from '@components/ui/validation-message/components/validation-message'
 
 const RadioGroup = (props: IRadio.GroupProps) => {
     const {
@@ -11,14 +11,13 @@ const RadioGroup = (props: IRadio.GroupProps) => {
         name,
         children,
         disabled,
-        error = [false, null],
-        success = [false, null],
+        error,
+        errorMessage,
+        success,
+        successMessage,
         onChange,
         parentClass
     } = props
-
-    const [isError, errorMessage] = error
-    const [isSuccess, successMessage] = success
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         onChange(event)
@@ -43,15 +42,12 @@ const RadioGroup = (props: IRadio.GroupProps) => {
                 })
             }
 
-            {isSuccess && successMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'success'}
-                                            messageList={successMessage}/>
+            {success && successMessage && (
+                <ValidationMessage type={'success'} parentClass={css.validationMessage}>{successMessage}</ValidationMessage>
             )}
-            {isError && errorMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'error'}
-                                            messageList={errorMessage}/>
+
+            {error && errorMessage && (
+                <ValidationMessage type={'error'} parentClass={css.validationMessage}>{errorMessage}</ValidationMessage>
             )}
         </div>
     )

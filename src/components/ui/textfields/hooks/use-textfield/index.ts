@@ -8,13 +8,10 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
         autofocus = false,
         disabled = false,
         value: externalValue = '',
-        error = [false, null],
-        success = [false, null],
+        error,
+        success,
         onChange
     } = props
-
-    const [isError, errorMessage] = error
-    const [isSuccess, successMessage] = success
 
     const nodeEl = React.useRef<T>(null)
     const [value, setValue] = React.useState(externalValue)
@@ -28,8 +25,8 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
     const classNames = classnames(
         css.textfield,
         {[css.is_disabled]: disabled},
-        {[css.is_error]: isError},
-        {[css.is_success]: isSuccess},
+        {[css.is_error]: error},
+        {[css.is_success]: success},
         {[css.is_blur]: isBlur && !value},
         {[css.is_focused]: isFocused},
     )
@@ -60,10 +57,6 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
         handleFocus,
         handleBlur,
         handleChange,
-        isError,
-        errorMessage,
-        isSuccess,
-        successMessage,
         isBlur,
         value,
         isFocused,

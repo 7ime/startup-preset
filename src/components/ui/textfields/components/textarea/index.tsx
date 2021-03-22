@@ -3,22 +3,22 @@ import classnames from 'classnames'
 import {ITextField} from '../../model'
 import css from '../../styles/textfield.module.scss'
 import {useTextField} from '../../hooks/use-textfield'
-import MessageValidationContainer from '../../../message-validation-container'
+import ValidationMessage from '@components/ui/validation-message/components/validation-message'
 
 const Textarea = (props: ITextField.TextareaProps) => {
     const {
         label,
-        rows = 5
+        rows = 5,
+        error,
+        success,
+        errorMessage,
+        successMessage
     } = props
 
     const {
         handleFocus,
         handleBlur,
         handleChange,
-        isError,
-        errorMessage,
-        isSuccess,
-        successMessage,
         value,
         nodeEl,
         autofocus,
@@ -41,15 +41,12 @@ const Textarea = (props: ITextField.TextareaProps) => {
                        value={value}/>
             </div>
 
-            {isSuccess && successMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'success'}
-                                            messageList={successMessage}/>
+            {success && successMessage && (
+                <ValidationMessage type={'success'} parentClass={css.validationMessage}>{successMessage}</ValidationMessage>
             )}
-            {isError && errorMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'error'}
-                                            messageList={errorMessage}/>
+
+            {error && errorMessage && (
+                <ValidationMessage type={'error'} parentClass={css.validationMessage}>{errorMessage}</ValidationMessage>
             )}
         </div>
     )

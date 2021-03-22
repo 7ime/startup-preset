@@ -1,18 +1,16 @@
 @import "~@styles/variables/colors.module.scss";
 @import "~@styles/variables/shared.module.scss";
 
-.list {
+.validationMessage {
     font-size: 1.3rem;
+
+    &.error {
+        color: $error;
+    }
+
+    &.success {
+        color: $success;
+    }
 }
 
-.item {
 
-}
-
-.error {
-    color: $error;
-}
-
-.success {
-    color: $success;
-}

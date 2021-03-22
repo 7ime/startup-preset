@@ -3,21 +3,20 @@ import classnames from 'classnames'
 import {v4 as uuid} from 'uuid'
 import {ICheckbox} from '../../model'
 import css from '../../styles/checkbox.module.scss'
-import MessageValidationContainer from '../../../message-validation-container'
+import ValidationMessage from '@components/ui/validation-message/components/validation-message'
 
 const Checkbox = (props: ICheckbox.Props) => {
     const {
         checked: externalChecked = false,
         type = '',
         disabled = false,
-        error = [false, null],
-        success = [false, null],
+        error,
+        errorMessage,
+        success,
+        successMessage,
         children,
         onChange
     } = props
-
-    const [isError, errorMessage] = error
-    const [isSuccess, successMessage] = success
 
     const [checked, setChecked] = React.useState(externalChecked)
     const [uuidCheckbox] = React.useState(uuid())
@@ -35,8 +34,8 @@ const Checkbox = (props: ICheckbox.Props) => {
         {[css[type]]: type},
         {[css.is_checked]: checked},
         {[css.is_disabled]: disabled},
-        {[css.is_error]: isError},
-        {[css.is_success]: isSuccess},
+        {[css.is_error]: error},
+        {[css.is_success]: success},
     )
 
     return (
@@ -52,15 +51,12 @@ const Checkbox = (props: ICheckbox.Props) => {
                 <div className={css.description}>{children}</div>
             </label>
 
-            {isSuccess && successMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'success'}
-                                            messageList={successMessage}/>
+            {success && successMessage && (
+                <ValidationMessage type={'success'} parentClass={css.validationMessage}>{successMessage}</ValidationMessage>
             )}
-            {isError && errorMessage && (
-                <MessageValidationContainer parentClass={css.messageContainer}
-                                            type={'error'}
-                                            messageList={errorMessage}/>
+
+            {error && errorMessage && (
+                <ValidationMessage type={'error'} parentClass={css.validationMessage}>{errorMessage}</ValidationMessage>
             )}
         </div>
     )

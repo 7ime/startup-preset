@@ -9,17 +9,14 @@ const Radio = (props: IRadio.ButtonProps) => {
         checked: externalChecked = false,
         type = '',
         disabled = false,
-        error = [false, null],
-        success = [false, null],
+        error,
+        success,
         value,
         children,
         name,
         onChange,
         parentClass
     } = props
-
-    const [isError] = error
-    const [isSuccess] = success
 
     const [checked, setChecked] = React.useState(externalChecked)
     const [uuidRadio] = React.useState(uuid())
@@ -37,8 +34,8 @@ const Radio = (props: IRadio.ButtonProps) => {
         {[css[type]]: type},
         {[css.is_checked]: checked},
         {[css.is_disabled]: disabled},
-        {[css.is_error]: isError},
-        {[css.is_success]: isSuccess},
+        {[css.is_error]: error},
+        {[css.is_success]: success},
         parentClass
     )
 

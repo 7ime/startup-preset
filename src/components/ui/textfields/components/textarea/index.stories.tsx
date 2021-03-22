@@ -88,9 +88,10 @@ export const Success = () => {
 
     return (
         <Textarea label={'Success'}
-               value={value}
-               success={[true, ['Test success message']]}
-               onChange={handleChange}/>
+            value={value}
+            success={true}
+            successMessage={'Test success message'}
+            onChange={handleChange}/>
     )
 }
 
@@ -103,8 +104,9 @@ export const Error = () => {
 
     return (
         <Textarea label={'Error'}
-               value={value}
-               error={[true, ['Test error message']]}
-               onChange={handleChange}/>
+            value={value}
+            error={true}
+            errorMessage={'Test error message'}
+            onChange={handleChange}/>
     )
 }

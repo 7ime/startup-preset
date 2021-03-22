@@ -72,7 +72,8 @@ export const Success = () => {
     return (
         <Checkbox checked={value}
                   type={'secondary'}
-                  success={[true, ['test success message']]}
+                  success={true}
+                  successMessage={'Test success message'}
                   onChange={handleChange}>You agree to the privacy policy</Checkbox>
     )
 }
@@ -87,7 +88,8 @@ export const Error = () => {
     return (
         <Checkbox checked={value}
                   type={'secondary'}
-                  error={[true, ['test error message']]}
+                  error={true}
+                  errorMessage={'Test error message'}
                   onChange={handleChange}>You agree to the privacy policy</Checkbox>
     )
 }

@@ -50,7 +50,7 @@ describe('test checkbox', () => {
 
 
     test('error', () => {
-        const {container, getByText} = render(<Checkbox checked onChange={jest.fn} error={[true, ['error message']]}>{checkboxTestText}</Checkbox>)
+        const {container, getByText} = render(<Checkbox checked onChange={jest.fn} error errorMessage={'error message'}>{checkboxTestText}</Checkbox>)
 
         const checkbox = container.querySelector('.checkbox') as HTMLElement
 
@@ -60,7 +60,7 @@ describe('test checkbox', () => {
     })
 
     test('success', () => {
-        const {container, getByText} = render(<Checkbox checked onChange={jest.fn} success={[true, ['success message']]}>{checkboxTestText}</Checkbox>)
+        const {container, getByText} = render(<Checkbox checked onChange={jest.fn} success successMessage={'success message'}>{checkboxTestText}</Checkbox>)
 
         const checkbox = container.querySelector('.checkbox') as HTMLElement
 

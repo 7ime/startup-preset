@@ -78,7 +78,8 @@ export const Success = () => {
     return (
         <Input label={'Success'}
                value={value}
-               success={[true, ['Test success message']]}
+               success={true}
+               successMessage={'Test success message'}
                onReset={() => {setValue('')}}
                onChange={handleChange}/>
     )
@@ -94,7 +95,8 @@ export const Error = () => {
     return (
         <Input label={'Error'}
                value={value}
-               error={[true, ['Test error message']]}
+               error={true}
+               errorMessage={'Test error message'}
                onReset={() => {setValue('')}}
                onChange={handleChange}/>
     )

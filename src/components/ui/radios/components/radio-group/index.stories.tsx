@@ -32,7 +32,7 @@ export const Success = () => {
     }, [])
 
     return (
-        <RadioGroup value={value} onChange={handleChange} name={'success'} success={[true, ['test success message']]}>
+        <RadioGroup value={value} onChange={handleChange} name={'success'} success successMessage={'test success message'}>
             <Radio value={'+'} type={'primary'}>Plus</Radio>
             <Radio value={'/'} type={'primary'}>Divided by</Radio>
             <Radio value={'*'} type={'primary'}>Times</Radio>
@@ -49,7 +49,7 @@ export const Error = () => {
     }, [])
 
     return (
-        <RadioGroup value={value} onChange={handleChange} name={'error'} error={[true, ['test error message']]}>
+        <RadioGroup value={value} onChange={handleChange} name={'error'} error errorMessage={'test error message'}>
             <Radio value={'+'} type={'primary'}>Plus</Radio>
             <Radio value={'/'} type={'primary'}>Divided by</Radio>
             <Radio value={'*'} type={'primary'}>Times</Radio>
