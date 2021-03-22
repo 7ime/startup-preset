@@ -51,11 +51,11 @@ const AuthLogin = () => {
 
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
-                        <Input label={'Email'} value={''} onChange={() => undefined} />
+                        <Input label={'Email'} />
                     </AuthFormRow>
 
                     <AuthFormRow>
-                        <InputPassword label='Password' value={''} onChange={() => undefined}/>
+                        <InputPassword label='Password' />
                     </AuthFormRow>
 
                     <AuthFormSubmit parentClass={css.submit}>

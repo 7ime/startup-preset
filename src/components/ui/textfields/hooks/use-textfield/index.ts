@@ -7,19 +7,23 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
     const {
         autofocus = false,
         disabled = false,
-        value: externalValue = '',
+        value: externalValue,
         error,
         success,
         onChange
     } = props
 
+    const isControlled = externalValue !== undefined && onChange !== undefined
+
     const nodeEl = React.useRef<T>(null)
-    const [value, setValue] = React.useState(externalValue)
+    const [value, setValue] = React.useState(isControlled ? externalValue : '')
     const [isFocused, setFocus] = React.useState(autofocus)
     const [isBlur, setBlur] = React.useState(true)
 
     React.useEffect(() => {
-        setValue(externalValue)
+        if (isControlled) {
+            setValue(externalValue)
+        }
     }, [externalValue])
 
     const classNames = classnames(
@@ -50,7 +54,13 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
     }, [])
 
     const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        onChange(event)
+        if (onChange) {
+            onChange(event)
+        }
+
+        if (!isControlled) {
+            setValue(event.target.value)
+        }
     }, [])
 
     return {

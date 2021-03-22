@@ -64,10 +64,12 @@ const InputPassword = (props: ITextField.InputProps) => {
                        tabIndex={-1}
                        type={type}/>
                 {
-                    isFocused && onReset && (
+                    isFocused && (
                         <div className={css.triggers}>
                             <div className={classNamesForTriggerPassword} onMouseDown={handlerChangeType}/>
-                            <div className={classnames(css.trigger, css.triggerClear)} onMouseDown={handleReset}/>
+                            {
+                                onReset && <div className={classnames(css.trigger, css.triggerClear)} onMouseDown={handleReset}/>
+                            }
                         </div>
                     )
                 }
