@@ -8,7 +8,7 @@ export namespace ITextField {
 
         disabled?: boolean
         autofocus?: boolean
-
+        name?: string
         onChange?(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): unknown
     }
 

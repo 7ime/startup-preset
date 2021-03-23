@@ -12,7 +12,8 @@ const Input = (props: ITextField.InputProps) => {
         error,
         success,
         errorMessage,
-        successMessage
+        successMessage,
+        name
     } = props
 
     const {
@@ -44,6 +45,7 @@ const Input = (props: ITextField.InputProps) => {
                        autoFocus={autofocus}
                        ref={nodeEl}
                        value={value}
+                       name={name}
                        tabIndex={-1}
                        type={'text'}/>
                 {

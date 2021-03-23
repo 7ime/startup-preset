@@ -17,7 +17,8 @@ const InputPassword = (props: ITextField.InputProps) => {
         error,
         success,
         errorMessage,
-        successMessage
+        successMessage,
+        name
     } = props
 
     const {
@@ -63,6 +64,7 @@ const InputPassword = (props: ITextField.InputProps) => {
                        autoFocus={autofocus}
                        ref={nodeEl}
                        value={value}
+                       name={name}
                        tabIndex={-1}
                        type={type}/>
                 {

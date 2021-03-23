@@ -12,7 +12,8 @@ const Textarea = (props: ITextField.TextareaProps) => {
         error,
         success,
         errorMessage,
-        successMessage
+        successMessage,
+        name
     } = props
 
     const {
@@ -36,6 +37,7 @@ const Textarea = (props: ITextField.TextareaProps) => {
                        onChange={handleChange}
                        autoFocus={autofocus}
                        rows={rows}
+                       name={name}
                        tabIndex={-1}
                        ref={nodeEl}
                        value={value}/>
