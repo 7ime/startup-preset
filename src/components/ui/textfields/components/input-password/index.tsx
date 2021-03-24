@@ -29,8 +29,7 @@ const InputPassword = (props: ITextField.InputProps) => {
         isFocused,
         nodeEl,
         autofocus,
-        classNames,
-        setValue
+        classNames
     } = useTextField<HTMLInputElement>(props)
 
     const [type, setType] = React.useState(EType.password)
@@ -43,7 +42,6 @@ const InputPassword = (props: ITextField.InputProps) => {
 
     const handleReset = React.useCallback(() => {
         onReset && onReset()
-        setValue('')
     }, [])
 
     const classNamesForTriggerPassword = classnames(
@@ -71,7 +69,9 @@ const InputPassword = (props: ITextField.InputProps) => {
                     isFocused && (
                         <div className={css.triggers}>
                             <div className={classNamesForTriggerPassword} onMouseDown={handlerChangeType}/>
-                            <div className={classnames(css.trigger, css.triggerClear)} onMouseDown={handleReset}/>
+                            {
+                                onReset && <div className={classnames(css.trigger, css.triggerClear)} onMouseDown={handleReset}/>
+                            }
                         </div>
                     )
                 }

@@ -61,7 +61,7 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
         if (!isControlled) {
             setValue(event.target.value)
         }
-    }, [])
+    }, [onChange])
 
     return {
         handleFocus,
@@ -72,7 +72,6 @@ export const useTextField = <T extends {value: string, focus(): unknown}>(props:
         isFocused,
         nodeEl,
         autofocus,
-        classNames,
-        setValue
+        classNames
     }
 }

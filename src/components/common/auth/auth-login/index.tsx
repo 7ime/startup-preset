@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import css from './index.module.scss'
@@ -8,12 +8,12 @@ import AuthTitle from '@components/common/auth/auth-title'
 import AuthDescription from '@components/common/auth/auth-description'
 import AuthForm from '@components/common/auth/auth-form'
 import Input from '@components/ui/textfields/components/input'
-import InputPassword from '@components/ui/textfields/components/input-password'
-import AuthFormRow from '@components/common/auth/auth-form-row'
 import Button from '@components/ui/buttons/components/button'
 import AuthFormSubmit from '@components/common/auth/auth-form-submit'
 import {useTranslation} from 'react-i18next'
 import {IFormInLocales} from '@models/form'
+import AuthFormRow from '@components/common/auth/auth-form-row'
+import InputPassword from '@components/ui/textfields/components/input-password'
 
 interface IFieldsValues {
     email: string;
@@ -34,9 +34,12 @@ const AuthLogin = () => {
     })
 
     const {
-        handleSubmit
+        handleSubmit,
+        control,
+        errors,
+        setValue,
     } = useForm<IFieldsValues>({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(schema)
     })
 
     const handleSubmitAfterValidation = React.useCallback((data: IFieldsValues) => {
@@ -51,11 +54,41 @@ const AuthLogin = () => {
 
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
-                        <Input label={'Email'} />
+                        <Controller
+                            name={fields.email.name}
+                            control={control}
+                            defaultValue={''}
+                            render={({ onChange, value }) => (
+                                <Input
+                                    name={fields.email.name}
+                                    onChange={onChange}
+                                    value={value}
+                                    label={fields.email.label}
+                                    error={!!errors.email}
+                                    errorMessage={errors.email?.message}
+                                    onReset={() => setValue('email', '', { shouldValidate: true })}
+                                />
+                            )}
+                        />
                     </AuthFormRow>
 
                     <AuthFormRow>
-                        <InputPassword label='Password' />
+                        <Controller
+                            name={fields.password.name}
+                            control={control}
+                            defaultValue={''}
+                            render={({ onChange, value }) => (
+                                <InputPassword
+                                    name={fields.password.name}
+                                    onChange={onChange}
+                                    value={value}
+                                    label={fields.password.label}
+                                    error={!!errors.password}
+                                    errorMessage={errors.password?.message}
+                                    onReset={() => setValue('password', '', { shouldValidate: true })}
+                                />
+                            )}
+                        />
                     </AuthFormRow>
 
                     <AuthFormSubmit parentClass={css.submit}>
