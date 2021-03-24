@@ -21,12 +21,12 @@ interface IFieldsValues {
 }
 
 const AuthLogin = () => {
-    const {t} = useTranslation('auth')
+    const {t} = useTranslation('login')
 
     const {
         fields,
         submit
-    } = t<IFormInLocales<IFieldsValues>>('auth:login.form', { returnObjects: true })
+    } = t<IFormInLocales<IFieldsValues>>('login:form', { returnObjects: true })
 
     const schema = yup.object().shape({
         email: yup.string().required(fields.email.errors?.required).email(fields.email.errors?.email),
@@ -49,8 +49,8 @@ const AuthLogin = () => {
     return (
         <div className={css.authLogin}>
             <AuthContainer>
-                <AuthTitle>{t('auth:login.title')}</AuthTitle>
-                <AuthDescription parentClass={css.description}>{t('auth:login.description')}</AuthDescription>
+                <AuthTitle>{t('login:title')}</AuthTitle>
+                <AuthDescription parentClass={css.description}>{t('login:description')}</AuthDescription>
 
                 <AuthForm onSubmit={handleSubmit(handleSubmitAfterValidation)}>
                     <AuthFormRow>
@@ -60,7 +60,6 @@ const AuthLogin = () => {
                             defaultValue={''}
                             render={({ onChange, value }) => (
                                 <Input
-                                    name={fields.email.name}
                                     onChange={onChange}
                                     value={value}
                                     label={fields.email.label}
@@ -79,7 +78,6 @@ const AuthLogin = () => {
                             defaultValue={''}
                             render={({ onChange, value }) => (
                                 <InputPassword
-                                    name={fields.password.name}
                                     onChange={onChange}
                                     value={value}
                                     label={fields.password.label}

@@ -5,6 +5,6 @@ export type II18nResources = Record<EI18nLanguages, Record<EI18nNameSpaces, Reco
 export const i18nResources: II18nResources = {
     [EI18nLanguages.EN]: {
         [EI18nNameSpaces.settings]: require('../locales/en/settings.json'),
-        [EI18nNameSpaces.auth]: require('../locales/en/auth.json'),
+        [EI18nNameSpaces.login]: require('../locales/en/login.json'),
     }
 }
