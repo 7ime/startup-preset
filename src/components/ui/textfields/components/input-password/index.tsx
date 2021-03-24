@@ -42,7 +42,7 @@ const InputPassword = (props: ITextField.InputProps) => {
 
     const handleReset = React.useCallback(() => {
         onReset && onReset()
-    }, [])
+    }, [onReset])
 
     const classNamesForTriggerPassword = classnames(
         css.trigger,

@@ -38,6 +38,7 @@ const AuthLogin = () => {
         control,
         errors,
         setValue,
+        formState
     } = useForm<IFieldsValues>({
         resolver: yupResolver(schema)
     })
@@ -65,7 +66,7 @@ const AuthLogin = () => {
                                     label={fields.email.label}
                                     error={!!errors.email}
                                     errorMessage={errors.email?.message}
-                                    onReset={() => setValue('email', '', { shouldValidate: true })}
+                                    onReset={() => setValue('email', '', { shouldValidate: formState.isSubmitted })}
                                 />
                             )}
                         />
@@ -83,7 +84,7 @@ const AuthLogin = () => {
                                     label={fields.password.label}
                                     error={!!errors.password}
                                     errorMessage={errors.password?.message}
-                                    onReset={() => setValue('password', '', { shouldValidate: true })}
+                                    onReset={() => setValue('password', '', { shouldValidate: formState.isSubmitted })}
                                 />
                             )}
                         />

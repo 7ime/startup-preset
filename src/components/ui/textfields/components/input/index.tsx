@@ -29,7 +29,7 @@ const Input = (props: ITextField.InputProps) => {
 
     const handleReset = React.useCallback(() => {
         onReset && onReset()
-    }, [])
+    }, [onReset])
 
     return (
         <div className={classNames}>
