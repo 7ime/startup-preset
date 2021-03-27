@@ -1,4 +1,5 @@
 import {IParentClass} from '@models/shared'
+import {NamedProps} from 'react-select/src/Select'
 
 namespace ISelect {
     export interface Option {
@@ -6,11 +7,12 @@ namespace ISelect {
         label: string
     }
 
-    export interface SimpleSelectProps extends IParentClass {
-        label: string;
-        name: string;
+    export interface Props extends IParentClass {
+        label: string
+        name: string
         options: Option[]
-        onChange?(option: Option | null): unknown;
+        onChange?(option: Option | null): unknown
+        components?: NamedProps['components']
     }
 }
 

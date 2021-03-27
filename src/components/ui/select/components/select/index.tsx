@@ -1,16 +1,17 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import Select from 'react-select'
+import ReactSelect from 'react-select'
 import css from '../../styles/select.module.scss'
 import ISelect from '../../model'
 
-const SimpleSelect = (props: ISelect.SimpleSelectProps) => {
+const Select = (props: ISelect.Props) => {
     const {
         label,
         name,
         onChange,
         options,
-        parentClass
+        parentClass,
+        components
     } = props
 
     const [selectedValue, setSelectedValue] = React.useState<string | null>(null)
@@ -31,12 +32,13 @@ const SimpleSelect = (props: ISelect.SimpleSelectProps) => {
     return (
         <div className={classNames}>
             <div className={css.label}>{label}</div>
-            <Select
+            <ReactSelect
                 name={name}
                 options={options}
                 noOptionsMessage={() => 'Not found'}
                 classNamePrefix="Select"
                 onChange={handleChange}
+                components={components}
                 onMenuOpen={() => setFocused(true)}
                 onMenuClose={() => setFocused(false)}
             />
@@ -44,4 +46,4 @@ const SimpleSelect = (props: ISelect.SimpleSelectProps) => {
     )
 }
 
-export default React.memo(SimpleSelect)
+export default React.memo(Select)
