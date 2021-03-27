@@ -1,7 +1,7 @@
 {
     "pageTitle": "Sign in",
     "title": "Sign in",
-    "description": "Please enter your email address and password to sign in to the site",
+    "description": "Please enter your email address and password to sign in to the site.",
     "form": {
         "fields": {
             "email": {

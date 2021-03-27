@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {Helmet} from 'react-helmet'
 import AuthLayout from '@components/common/layouts/auth-layout'
-import AuthLogin from '@components/common/auth/auth-login'
 import {useTranslation} from 'react-i18next'
+import AuthLoginByPhone from '@components/common/auth/auth-login-by-phone'
 
 const LoginByPhoneScene = () => {
     const {t} = useTranslation('loginByPhone')
@@ -13,7 +13,7 @@ const LoginByPhoneScene = () => {
             </Helmet>
 
             <AuthLayout>
-                <AuthLogin />
+                <AuthLoginByPhone />
             </AuthLayout>
         </React.Fragment>
     )

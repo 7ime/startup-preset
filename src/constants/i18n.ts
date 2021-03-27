@@ -8,4 +8,5 @@ export enum EI18nNameSpaces {
     settings = 'settings',
     login = 'login',
     loginByPhone = 'loginByPhone',
+    countries = 'countries',
 }

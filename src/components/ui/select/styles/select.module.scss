@@ -1,0 +1,130 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.select {
+    position: relative;
+    padding-top: 17px;
+
+    .label {
+        font-family: $font;
+        font-size: 13px;
+        background-color: #fff;
+        padding: 0;
+        color: $grey;
+        z-index: 2;
+        transition: 0.15s ease-in-out;
+        pointer-events: none;
+        transform: translateY(25px);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &.selected .label, &.focused .label {
+        transform: translateY(0);
+    }
+
+    :global(.Select__control) {
+        position: relative;
+        cursor: pointer;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid $border_color;
+        min-height: auto;
+
+        &:before {
+            transition: 0.15s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 2px;
+            background-color: $primary;
+        }
+
+        &:hover {
+            border-color: $border_color!important;
+        }
+    }
+
+    &.focused :global(.Select__control) {
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    :global(.Select__control--is-focused) {
+        box-shadow: none;
+
+        &:hover {
+            border-color: inherit;
+        }
+    }
+
+    :global(.Select__value-container) {
+        font-family: $font;
+        font-weight: normal;
+        font-size: 13px;
+        padding: 10px 0 6px;
+        margin: 0;
+
+        > div {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    :global(.Select__input) {
+        line-height: 1;
+        position: relative;
+        top: -2px;
+    }
+
+    :global(.Select__single-value) {
+        margin: 0;
+        color: $text_color;
+        line-height: 1;
+    }
+
+    :global(.Select__placeholder) {
+        display: none;
+    }
+
+    :global(.Select__indicator-separator) {
+        display: none;
+    }
+
+    :global(.Select__indicator) {
+        color: $black;
+        padding: 4px 0 4px 4px;
+        opacity: 0.2;
+        transition: 0.15s ease-in-out;
+
+        &:hover {
+            color: $black;
+            opacity: 1;
+        }
+    }
+
+    :global(.Select__menu) {
+        z-index: 100;
+    }
+
+    :global(.Select__option) {
+        &:active {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    :global(.Select__option--is-focused) {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    :global(.Select__option--is-selected, .Select__option--is-active) {
+        background-color: rgba(0, 0, 0, 0.08);
+        color: inherit;
+    }
+}
