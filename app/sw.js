@@ -4,19 +4,20 @@ var serviceWorkerOption = {
     "/static/fonts/OpenSans-Regular.3ed9575d.ttf",
     "/static/fonts/OpenSans-SemiBold.ba5cde21.ttf",
     "/static/fonts/OpenSans-Bold.1025a6e0.ttf",
-    "/0.43172f2a.bundle.js",
-    "/1.80aa3337.css",
-    "/1.143437d7.bundle.js",
     "/main.e8bc2fc1.css",
-    "/main.424481e5.bundle.js",
-    "/vendors~main.f21cfebf.bundle.js",
-    "/4.8208593e.css",
-    "/4.ffc19744.bundle.js",
-    "/5.840cee30.bundle.js",
-    "/6.f08452e6.css",
-    "/6.fabed9c3.bundle.js",
-    "/7.0cde434d.bundle.js",
-    "/8.377a1cfb.bundle.js"
+    "/main.064f2bf5.bundle.js",
+    "/vendors~main.f66de151.bundle.js",
+    "/2.86dc574f.bundle.js",
+    "/3.8208593e.css",
+    "/3.33208c0b.bundle.js",
+    "/4.5a85ab82.css",
+    "/4.e6fbfd09.bundle.js",
+    "/5.f287ee5c.css",
+    "/5.53c470f3.bundle.js",
+    "/6.fb876540.bundle.js",
+    "/7.3be242e3.bundle.js",
+    "/8.f08452e6.css",
+    "/8.ff7893a5.bundle.js"
   ]
 };
         
