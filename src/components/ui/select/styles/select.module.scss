@@ -111,20 +111,24 @@
 
     :global(.Select__menu) {
         z-index: 100;
+        border: 1px solid $border_color;
+        box-shadow: 0 1px 10px rgba($black, 0.02);
     }
 
     :global(.Select__option) {
+        font-size: 13px;
+
         &:active {
-            background-color: rgba(0, 0, 0, 0.08);
+            background-color: $grey_20;
         }
     }
 
     :global(.Select__option--is-focused) {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: $grey_20;
     }
 
-    :global(.Select__option--is-selected, .Select__option--is-active) {
-        background-color: rgba(0, 0, 0, 0.08);
-        color: inherit;
+    :global(.Select__option--is-selected), :global(.Select__option--is-active) {
+        background-color: $primary;
+        color: $white;
     }
 }
