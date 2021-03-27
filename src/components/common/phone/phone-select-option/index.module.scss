@@ -1,0 +1,27 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.phoneSelectOption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 13px;
+
+    &.isFocused {
+        background-color: $grey_20;
+    }
+
+    &.isSelected {
+        background-color: $grey_20
+    }
+
+    .name {
+
+    }
+
+    .code {
+        color: $grey;
+        font-size: 12px;
+    }
+}

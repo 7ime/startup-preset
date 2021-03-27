@@ -123,12 +123,9 @@
         }
     }
 
-    :global(.Select__option--is-focused) {
+    :global(.Select__option--is-focused),
+    :global(.Select__option--is-selected),
+    :global(.Select__option--is-active) {
         background-color: $grey_20;
-    }
-
-    :global(.Select__option--is-selected), :global(.Select__option--is-active) {
-        background-color: $primary;
-        color: $white;
     }
 }

@@ -1,6 +1,5 @@
 {
     "data": {
-        "AB": "Abkhazia",
         "AC": "Ascension Island",
         "AD": "Andorra",
         "AE": "United Arab Emirates",
@@ -10,7 +9,6 @@
         "AL": "Albania",
         "AM": "Armenia",
         "AO": "Angola",
-        "AQ": "Antarctica",
         "AR": "Argentina",
         "AS": "American Samoa",
         "AT": "Austria",
@@ -35,7 +33,6 @@
         "BR": "Brazil",
         "BS": "Bahamas",
         "BT": "Bhutan",
-        "BV": "Bouvet Island",
         "BW": "Botswana",
         "BY": "Belarus",
         "BZ": "Belize",
@@ -91,13 +88,11 @@
         "GP": "Guadeloupe",
         "GQ": "Equatorial Guinea",
         "GR": "Greece",
-        "GS": "South Georgia and the South Sandwich Islands",
         "GT": "Guatemala",
         "GU": "Guam",
         "GW": "Guinea-Bissau",
         "GY": "Guyana",
         "HK": "Hong Kong",
-        "HM": "Heard Island and McDonald Islands",
         "HN": "Honduras",
         "HR": "Croatia",
         "HT": "Haiti",
@@ -174,7 +169,6 @@
         "NU": "Niue",
         "NZ": "New Zealand",
         "OM": "Oman",
-        "OS": "South Ossetia",
         "PA": "Panama",
         "PE": "Peru",
         "PF": "French Polynesia",
@@ -183,7 +177,6 @@
         "PK": "Pakistan",
         "PL": "Poland",
         "PM": "Saint Pierre and Miquelon",
-        "PN": "Pitcairn",
         "PR": "Puerto Rico",
         "PS": "Palestine",
         "PT": "Portugal",
@@ -219,7 +212,6 @@
         "TA": "Tristan da Cunha",
         "TC": "Turks and Caicos Islands",
         "TD": "Chad",
-        "TF": "French Southern Territories",
         "TG": "Togo",
         "TH": "Thailand",
         "TJ": "Tajikistan",
@@ -235,7 +227,6 @@
         "TZ": "Tanzania",
         "UA": "Ukraine",
         "UG": "Uganda",
-        "UM": "United States Minor Outlying Islands",
         "US": "United States",
         "UY": "Uruguay",
         "UZ": "Uzbekistan",
@@ -253,7 +244,6 @@
         "YT": "Mayotte",
         "ZA": "South Africa",
         "ZM": "Zambia",
-        "ZW": "Zimbabwe",
-        "ZZ": "International"
+        "ZW": "Zimbabwe"
     }
 }
