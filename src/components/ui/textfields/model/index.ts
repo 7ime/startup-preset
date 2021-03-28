@@ -18,5 +18,12 @@ export namespace ITextField {
 
     export interface InputProps extends BaseProps {
         onReset?(): unknown
+        onKeyPress?(event: React.KeyboardEvent<HTMLInputElement>): void
+        onPaste?(event: React.ClipboardEvent<HTMLInputElement>): void
+    }
+
+    export interface InputNumberProps extends InputProps {
+        regexpPatter?: string
+        regexpFlags?: string
     }
 }

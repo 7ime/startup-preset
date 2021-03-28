@@ -13,4 +13,16 @@
     .submit {
         margin-top: 35px;
     }
+
+    .phone {
+        display: flex;
+
+        .code {
+
+        }
+
+        .number {
+            flex: 1;
+        }
+    }
 }

@@ -13,6 +13,8 @@ const Input = (props: ITextField.InputProps) => {
         success,
         errorMessage,
         successMessage,
+        onKeyPress,
+        onPaste,
         name
     } = props
 
@@ -40,6 +42,8 @@ const Input = (props: ITextField.InputProps) => {
                  tabIndex={0}>
                 <input className={classnames(css.control, css.controlInput)}
                        onChange={handleChange}
+                       onKeyPress={onKeyPress}
+                       onPaste={onPaste}
                        autoFocus={autofocus}
                        ref={nodeEl}
                        value={value}
