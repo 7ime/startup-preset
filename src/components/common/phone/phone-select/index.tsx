@@ -6,7 +6,7 @@ import {transformCountriesToSelectOptions} from '@helpers/select-options/transfo
 import Select from '@components/ui/select/components/select'
 import PhoneSelectOption from '@components/common/phone/phone-select-option'
 import {IParentClass} from '@models/shared'
-
+import PhoneSelectValueContainer from '@components/common/phone/phone-select-value-container'
 
 interface IProps extends IParentClass {
     label: string;
@@ -31,7 +31,11 @@ const PhoneSelect = (props: IProps) => {
 
     return (
         <div className={classNames}>
-            <Select label={label} name={name} options={countriesOptions} components={{Option: PhoneSelectOption}}/>
+            <Select label={label}
+                    name={name}
+                    options={countriesOptions}
+                    components={{Option: PhoneSelectOption, ValueContainer: PhoneSelectValueContainer}}
+            />
         </div>
     )
 }

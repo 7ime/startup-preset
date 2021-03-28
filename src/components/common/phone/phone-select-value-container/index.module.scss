@@ -1,0 +1,29 @@
+@import '~@styles/variables/colors.module.scss';
+@import '~@styles/variables/shared.module.scss';
+
+.phoneSelectValueContainer {
+    &.withValue {
+        padding-left: 28px;
+    }
+
+    .icon {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 21px;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border: 1px solid transparent;
+
+        &.default {
+            background-image: url('~@images/icons/earth.svg');
+            border-color: $border_color;
+        }
+    }
+}
+
+
