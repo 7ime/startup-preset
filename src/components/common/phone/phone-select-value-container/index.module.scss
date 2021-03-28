@@ -2,13 +2,24 @@
 @import '~@styles/variables/shared.module.scss';
 
 .phoneSelectValueContainer {
+    font-family: $font;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 10px 0 6px;
+    margin: 0;
+
+    > div {
+        margin: 0;
+        padding: 0;
+    }
+
     &.withValue {
         padding-left: 28px;
     }
 
     .icon {
         position: absolute;
-        top: 8px;
+        top: 10px;
         left: 0;
         width: 21px;
         height: 14px;
